@@ -1,0 +1,90 @@
+.mainDiv{
+    height: 220vh;
+    background-color:rgb(245,245,245);
+}
+
+.mainDivLg{
+    
+    height: 101.3vh;
+}
+
+.headerHolder{
+    position: absolute;
+    z-index: 50;
+}
+
+.contentHolder{
+    height: 100vh;
+    padding: 55px 30px 55px 30px;
+}
+
+.contentHolderLgOne{
+    height: 100vh;
+    background-color: blue;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentHolderLgTwo{
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.link1{
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px 20px 10px 20px;
+    font-weight: bold; 
+    transition: all 0.3s;
+}
+
+.link2{
+    background-color: blue;
+    border-radius: 30px;
+    padding: 10px 20px 10px 20px;
+    font-weight: bold; 
+    transition: all 0.3s;
+}
+
+.link1:hover,.link2:hover{
+    box-shadow: 0px 0px 3px black;
+}
+
+.pageHead{
+    background-color: white;
+    padding: 8px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 3px gray;
+    border: none;
+    font-weight: bold;
+}
+
+.newTeam,.joinTeam{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+.imgMargin{
+    margin-top: 32px;
+}
+
+.wsLinks{
+    background-color: blue;
+    padding: 20px 25px 20px 25px;
+    border-radius: 30px;
+}
+
+
+

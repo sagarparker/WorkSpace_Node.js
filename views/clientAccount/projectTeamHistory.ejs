@@ -1,0 +1,77 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/pmAcc/projectHistory.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/client" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client/accDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-5 blueDiv">
+            <center>
+                <img src="<%= cd.Cimage %>" style="margin-top:200px;border-radius: 50%;" alt="" width="180px" height="180px">
+            </center>
+            <center>
+                <h3 style="color:white;margin-top: 10px;"><b><%= cd.Cname %></b></h3>
+            </center>
+            <center>
+                <h4 style="color:gainsboro"><b>No of projects done: 21 </b></h4 style="color:gainsboro">
+            </center>
+        </div>
+        <div class="col-7 infoDiv pl-3 pr-3" style="padding-top: 80px;">
+            <div class="scrollDivHolder">
+                <div class="scrollDiv p-2">
+                    <% cd.ClientProjects.forEach(function(pj){ %>
+                        <% prjData.forEach(function(pd){ %>
+                            
+                                <% if(pj.projectID == pd._id ){ %>
+                                    <% wst.forEach(function(wsteam){ %>
+                                    <% if(wsteam._id == pd.pTeam){ %>
+                                        <div class="prjBlock container-fluid mb-3">
+                                            <div class="row pt-3">
+                                                <div class="col-7">
+                                                    <h4><b>WsTeam name : </b><span style="color: blue;"><%= wsteam.teamName %></span></h4>
+                                                </div>
+                                               
+                                                <div class="col-5 pl-5">
+                                                    <h4><b>Team rating : </b><span style="color: blue;"></span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                    <% }); %>
+                            <% } %>
+                            
+                        <% }); %>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

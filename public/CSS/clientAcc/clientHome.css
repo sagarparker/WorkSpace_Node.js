@@ -1,0 +1,179 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.accDiv{
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.homeDiv{
+    height: 100vh;
+    background-color: rgb(240, 240, 240);
+}
+
+
+
+.newProject{
+    background-color: white;
+    height: 30vh;
+    margin-top: 9vh;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px rgb(194, 194, 194);
+}
+
+.ongProj{
+    margin-left: -15px;
+}
+
+.projectCard{
+    height: 45vh;
+    background-color: white;
+    width: 21.5vw;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px rgb(194, 194, 194);
+    position: relative;
+}
+
+
+
+
+
+.mangBtn{
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.2s;
+}
+
+.mangBtn:hover{
+    background-color: rgb(0, 0, 212);
+}
+
+
+
+.newProjBtn{
+
+    padding: 15px 80px 15px 80px;
+    background-color: blue;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.2s;
+    
+}
+
+.newProjBtn:hover{
+    background-color: rgb(0, 0, 212);
+}
+
+.grayBox{
+    height: 24.2vh;
+    width: 32.5vw;
+    background-color: rgb(240, 240, 240);
+    margin-top:-30px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+
+.teamLink{
+    font-weight: bold;
+    font-size: 1.4em;
+    color:black;
+}
+
+.scrollDiv{
+    overflow-y: scroll;
+    height: 47vh;
+    margin-left: -36px;
+}
+
+.projectCard:nth-of-type(-n+4){
+    margin-top: 5px;
+}
+
+.projectCard:nth-of-type(n+4){
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+ 
+
+@media screen and (max-width:600px){
+
+    .mainDiv{
+        height: 282vh;
+    }
+   
+    .newProject{
+        height: 48vh;
+    }
+
+    .homeDiv{
+        height: 182vh;
+        
+    }
+
+    .grayBox{
+        margin-top: 40px;
+        height: 24vh;
+        width:77vw;
+    }
+
+    .toAlign{
+        margin-left: -20px;
+    }
+
+    .newProjBtn{
+        padding: 15px 75px 15px 75px;
+    }
+
+    .projectCard{
+        width: 80vw;
+        margin-bottom: 30px;
+        
+    }
+
+    .projectCard:nth-of-type(3){
+        margin-right: 20px;
+    }
+
+    .scrollDiv{
+        height: 110vh;
+        padding-right: 20px;
+        margin-left: -10px;
+    }
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(226, 226, 226);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }

@@ -1,0 +1,54 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/clientAcc/clientPrjPayment.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-2"><a href="javascript:history.back()" style="text-decoration: none !important;font-weight: bold;color: blue">Go back</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client/accDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h3 style="margin-top: 77px;margin-left: 48px;"><b>Project payment</b></h3>
+            <h3 style="margin-top: 50px;"><span style="font-weight: bold">Final project payment : </span>$<%= prjData.pBudget %></h3>
+            <p class=" pt-2" style="font-size: 1.3em; margin-bottom: 45px;">The payment you make will only be transferred to the WsTeam once the project is complete,incase of some complication related to your project the money will be transfered back to you after 
+                further analysis by our team at WorkSpace.com *.  <span style="color:gray;font-size: 0.6em;">(T&C applied)</span>
+            </p>
+            <form action="" method="POST">
+                <input type="text" name="cardName" class="cInp" id="" style="width: 99.6%;" placeholder="Credit card name">
+                <input type="number" name="cardNumber" class="cInp mt-4" style="width: 58%;" placeholder="Credit card number">
+                <input type="number" name="cardCvv" class="cInp mt-4 " style="width: 40%;margin-left: 5px;" placeholder="Credit card CVV">
+                <input type="submit" value="Make payment" class="mt-3 subBtn" >
+            </form>
+        </div>
+        <div class="col-6">
+            <img src="/Images/payment_images/projectPayment.svg" style="margin-top: 90px;" alt="" width="600px" height="500px">
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

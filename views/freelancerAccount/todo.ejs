@@ -1,0 +1,129 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/freelancer/todo.css">
+<script src="/JS/freelancerHome/menuBar.js"></script>
+<style>
+.crossMd{
+        padding-left: 66px;
+}
+
+@media screen and (max-width:600px){
+.crossMd{
+        padding-left: 14px;
+}   
+}
+</style>
+
+<% include ../partials/headerTwo %>
+
+<!-- START HERE -->
+
+<div class="d-none d-md-block">
+        <div class="menu " style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                        <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                        <% if(utype == "Project manager"){ %>
+                                <h3 class="mt-5"><a href="/workspace/projectmanager" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+
+                        <% }else{ %>
+                                <h3 class="mt-5"><a href="/workspace/freelancer" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                        <% } %>
+                                    
+                </div>
+        </div>
+        
+        <div class="barHolder " style="margin-top: 75px;margin-left:17px;position:absolute;z-index: 5;">
+                <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px"  >
+        </div>
+</div>
+
+
+<div class="mainDiv">
+<div class="container-fluid">
+        <div class="row">
+                <div class="col-12">
+                        <center>
+                        <div class="todoHolder">
+                        <div class="topBar p-2 text-left">
+                                <h2 class="pt-1" style="color: white;font-weight: bold">ToDo list </h2>
+                        </div>
+
+                        <div class="scrollDivHolder">
+                                <div class="scrollDiv text-left">
+                                        <% udata.TodoList.forEach(function(udt){ %>
+                                                <div class="todo mb-3">
+                                                        <div class="row">
+                                                                <div class="col-12 col-md-9">
+                                                                                <p style="font-size: 0.9em;color:blue"><%= udt.todoDate || null %></p>
+                                                                                <% if(udt.taskDone == true){ %>
+                                                                                        <h5 style="color: gray"><s><%= udt.uTodo %></s></h5>
+                                                                                <% }else{ %>
+                                                                                        <h5 ><%= udt.uTodo %></h5>
+                                                                                <% } %>
+                                                                                
+                                                                </div>
+                                                                <% if(udt.taskDone){ %>
+                                                                        <div class="col-1 col-md-3 crossMd pt-4 mt-2" >
+                                                                                        <form action="/workspace/todo/delete/<%= uid %>/<%= udt._id %>/<%= utype %>" method="POST">
+                                                                                                <button type="submit">
+                                                                                                                <i class="fas fa-times-circle" style="color: black;font-size:1.8em"></i>
+                                                                                                </button>
+                                                                                        </form>
+                                                                        </div>
+                                                                <% }else{ %>
+                                                                        <div class="col-6 col-md-1 pt-4 mt-2">
+                                                                                        <form action="/workspace/todo/done/<%= uid %>/<%= udt._id %>/<%= utype %>" method="POST">
+                                                                                                <button type="submit">
+                                                                                                                <i class="fas fa-check-circle" style="color: blue;font-size:1.8em"></i>
+                                                                                                </button>
+                                                                                        </form>
+                                                                        </div>
+                                                                        <div class="col-6 col-md-2 pl-4 pt-4 mt-2">
+                                                                                        <form action="/workspace/todo/delete/<%= uid %>/<%= udt._id %>/<%= utype %>" method="POST">
+                                                                                                <button type="submit">
+                                                                                                                <i class="fas fa-times-circle" style="color: black;font-size:1.8em"></i>
+                                                                                                </button>
+                                                                                        </form>
+                                                                        </div>
+                                                                <% } %>
+                                                          
+                                                        </div>
+                                                   
+                                                       
+                                                      
+                                                        
+                                                </div>
+                                                
+                                        <% }); %>
+                                </div>
+                        </div>
+
+
+                        <div class="formHolder">
+                                <form action="/workspace/freelancer/todo/<%= uid %>/<%= utype %>" method="POST">
+                                        <input type="text" name="msg" id="mainInp" placeholder="Add a new task here." autocomplete="off" spellcheck="off" required>
+                                       
+                                      
+                                        <input type="submit" value="ADD" id="subBtn">
+                                </form>
+                        </div>
+                        </div>
+                        </center>
+                        
+                </div>
+        </div>
+</div>
+</div>
+
+
+<!-- FOOTER -->
+
+<script src="/JS/freelancer/todo.js"></script>
+
+<% include ../partials/footerAcc %>

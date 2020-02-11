@@ -1,0 +1,130 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/prjPages/prjClientReview.css">
+
+<style>
+.ratingBox{
+    width:205px;
+    border-radius: 10px;
+    border:1px solid rgb(150, 149, 149);
+    height: 35px;
+    padding: 5px;
+}
+
+.txtBox{
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.subBtn{
+    color: white;
+    font-weight: bold;
+    background-color: blue;
+    border-radius: 10px;
+    border:none;
+    padding: 5px 10px 5px 10px;
+    transition: all 0.2s ;
+}
+
+.subBtn:hover{
+    background-color: rgb(6, 6, 177);
+}
+
+
+
+</style>
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-5"><a href="/workspace/<%= utype %>" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="#" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-6">
+            <div class="row infoHolder">
+                <div class="col-5 blueDiv">
+                        <center>
+                            <img src="<%= clData.Cimage %>" alt="" height="200px" width="200px" style="border-radius: 50%;margin-top:115px">
+                        </center>
+                        <center>
+                            <h3 class="mt-3" style="color:white;font-weight: bold;"><%= clData.Cname %></h3>
+                        </center>
+            
+                        <center>
+                            <i class="fas fa-star" style="color:white"></i>
+                            <i class="fas fa-star" style="color:white"></i>
+                            <i class="fas fa-star" style="color:white"></i>
+                            <i class="fas fa-star" style="color:white"></i>
+                            
+                        </center>
+
+                        <center>
+                            <% if(success && success.length > 0 ){%>
+      
+        
+                                <div class="alert alert-info p-1 pos mt-1" style="font-size: 20px;width: 80%;" role="alert">
+                                  <b ><%= success %></b>
+                                </div>
+                              
+                              
+                            <% } %>
+                        </center>
+                </div>
+                <div class="col-7 mainInfo pl-4">
+
+                        <h4 class="pt-4 "><b>Company type</b></h4>
+                        <h5><%= clData.companyType %></h5>
+
+                        <h4 class="pt-4 "><b>Company established</b></h4>
+                        <h5><%= clData.established %></h5>
+
+                        <form action="/workspace/project/client/review/<%= cid %>/<%= pid %>/<%= pname %>/<%= uname %>/<%= utype %>" method="POST">
+                            <h4 class="pt-4" style="font-weight: bold;">Review
+                     
+                            
+                            </h4>
+                            <textarea name="rTxt" class="txtBox" cols="40" rows="5" required placeholder="Please enter your review here."></textarea>
+                            <h4 class="pt-4 "><b>Rating</b></h4>
+                            <input type="number" name="stars" class="ratingBox" min="1" max="5" required placeholder="Please enter your rating">
+                            <button type="submit" class="subBtn">SUBMIT REVIEW</button>
+                        </form>
+
+                        
+
+                </div>
+            </div>
+         
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

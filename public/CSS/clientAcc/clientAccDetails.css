@@ -1,0 +1,50 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.whiteBox{
+    height: 100vh;
+}
+
+.blueBox{
+    height: 100vh;
+    background-color:blue;
+}
+
+.pTitle{
+    color:blue;
+    font-weight: bold;
+}
+
+.cmBtn{
+    padding: 15px 30px 15px 30px;
+    color:white;
+    background-color: blue;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+@media screen and (max-width:600px){
+    .mainDiv{
+        height: 225vh;
+    }
+
+    .whiteBox{
+        height: 145vh;
+    }
+
+    .blueBox{
+        height: 100vh;
+    }
+
+    .cmBtn{
+        padding: 15px 57px 15px 57px;
+        color:white;
+        background-color: blue;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+}

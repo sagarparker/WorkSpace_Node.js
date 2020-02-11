@@ -1,0 +1,91 @@
+.mainDiv{
+    height: 100vh;
+    position: relative;
+ 
+}
+
+
+.cardBlue{
+    background-color: blue;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#divHead{
+    color: white;
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+.details{
+    
+    color: white;
+    text-shadow: 0px 0px 5px rgb(73, 71, 71);
+    
+}
+
+
+
+.msg{
+    color: white;
+    text-shadow: 0px 0px 5px black; 
+}
+
+.switchBtn,.btnSub{
+    background-color: white;
+    color:black;
+    font-weight: bold;
+    border:none;
+    border-radius: 35px;
+    padding:12px;
+    transition: all 0.2s;
+    outline: none !important;
+}
+
+.switchBtn:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+.btnSub:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+#goBack{
+    transition: all 0.2s;
+}
+
+#goBack:hover{
+   
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.imgHolder{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.msgHead{
+    font-weight: bolder;
+    font-size:3em;
+}
+
+@media screen and (max-width:700px){
+    .msgHead{
+        font-size: 3.2em;
+    }
+
+    .cardBlue{
+        background: url(../Images/contactPage_images/contactSm.svg);
+        background-position: center;
+        background-size: cover;
+    }
+}

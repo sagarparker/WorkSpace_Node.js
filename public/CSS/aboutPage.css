@@ -1,0 +1,138 @@
+
+.division{
+
+    
+height: 100vh;
+
+font-size: 1.5rem;
+background-size: cover;
+
+overflow: hidden;
+white-space:normal;
+
+
+}
+
+.pageHead{
+  margin-top: 14vh;
+}
+
+
+
+.head{
+  
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8em;
+    z-index: 99;
+    
+}
+
+
+
+.division:nth-of-type(2)
+{
+  margin-top: 25px;
+background-image: url(../Images/aboutPage_images/fDiv.png);
+font-size:2em;
+background-position: 0px -250px;
+background-size: cover;
+}
+
+#txt_holder{
+   margin-top: 26%;
+   margin-right: 20px;
+    
+}
+
+@media screen and (max-width: 600px) {
+
+  .division:nth-of-type(2)
+{
+background: white;
+
+background-position: center;
+background-size: cover;
+}
+
+  #img_holder{
+     display: flex;
+     justify-content: center;
+     
+ }
+
+}
+
+
+
+
+
+.division:nth-of-type(3){
+background: white;
+background-position: top;
+}
+
+@media screen and (max-width: 600px) {
+    .division:nth-of-type(3){
+      font-size: 1.3em;
+        }
+
+  }
+
+
+
+.division:nth-of-type(4){
+    background-image: url(../Images/aboutPage_images/bioBg.png);
+    background-position: center;
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+    .division:nth-of-type(4){
+      font-size: 1.2em;
+        }
+
+  }
+
+#bioImg{
+  border-radius: 50%;
+  border:5px solid white;
+  transition: all 0.3s;
+}
+
+
+
+#bio{
+display: flex;
+justify-content: center;
+}
+
+.content{
+position: relative;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+text-align: center;
+}
+
+#img_holder{
+  margin-top: 27vh;
+}
+
+
+
+
+[data-scroll] {
+transition: all 1s;
+}
+
+[data-scroll="in"] {
+opacity: 1;
+transform: scale(1);
+}
+
+[data-scroll="out"] {
+opacity: 0;
+transform: scale(0);
+}
+

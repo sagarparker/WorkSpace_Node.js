@@ -1,0 +1,137 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.infoDiv{
+    height: 100vh;
+}
+
+
+.chatBoxHolder{
+    background-color: rgb(247, 247, 247);
+    height: 100vh;
+}
+
+.chatBox{
+    padding-top: 75px;
+}
+
+.teamScrollDiv{
+    height: 62vh;
+    overflow-y: auto;
+    direction:rtl;
+}
+
+.scrollDivHolder{
+    height: 75vh;
+    background-color: white;
+    margin-left: 0.4vw;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0px 0px 4px gray;
+  
+}
+
+.scrollDiv{
+    margin-top: -5px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    height: 100%;
+     
+}
+
+.formDiv{
+    position: absolute;
+    bottom: 20px;
+}
+
+.msgHolder{
+    padding:30px;
+    margin-left: -70px;
+    margin-top:-30px;
+}
+
+h5{
+    margin-bottom: 20px;
+    background-color: rgb(247, 247, 247);
+    padding: 10px;
+    margin-top:-10px;
+    border-radius: 0px 0px 10px 10px
+}
+
+
+h6{
+    background-color: rgb(247, 247, 247);
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#m{
+    margin-left: 0.4vw;
+    width: 66vw;
+    padding: 10px;
+    border:none;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 0px 4px gray;
+}
+
+#sendMsg{
+    padding: 9px 17px 10px 17px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: blue;
+    border:none;
+    border-radius: 0px 10px 10px 0px;
+    
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+.teamScrollDiv::-webkit-scrollbar {
+    width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border:2px solid rgb(209, 204, 204);
+    border-radius: 10px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:blue; 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(4, 4, 207); 
+  }
+
+  @media screen and (max-width:600px){
+
+    #m{
+        width: 254px;
+    }
+
+    #sendMsg{
+         
+        background-color: black;
+    }
+
+    
+    .scrollDivHolder{
+        box-shadow: 0px 0px 4px gray;
+        
+    
+    }
+
+   
+
+  }

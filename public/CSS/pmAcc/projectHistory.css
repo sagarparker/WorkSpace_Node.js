@@ -1,0 +1,51 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.blueDiv{
+    height: 100vh;
+    background-color: blue;
+}
+
+.scrollDivHolder{
+    height: 84vh;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.scrollDiv{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.prjBlock{
+    height: 10vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px gainsboro;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+/* Handle on hover */
+.scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+}

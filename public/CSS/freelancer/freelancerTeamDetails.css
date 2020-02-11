@@ -1,0 +1,83 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.teamDetails{
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.memberDetails{
+    background-image: url(/Images/Freelancer_images/Fhome_images/fhome.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.teamManage{
+    background-color: blue;
+    font-weight: bold;
+    padding: 10px 30px 10px 30px;
+    border-radius: 30px;
+}
+
+.contHolder{
+    height: 85vh;
+    margin-top: 12vh;
+    background-color: rgba(255,255,255,1);
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.scrollDiv{
+    overflow-y: scroll;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+    
+    
+  }
+
+
+ /* Track */
+ ::-webkit-scrollbar-track {
+    border:2px solid rgb(209, 204, 204);
+    border-radius: 10px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:blue; 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(4, 4, 207); 
+  }
+
+@media screen and (max-width:700px){
+    .mainDiv{
+        height: 210vh;
+    }
+    
+    .memberDetails{
+        
+        height: 110vh;
+    }
+
+    .contHolder{
+        height: 87vh;
+    }
+
+}

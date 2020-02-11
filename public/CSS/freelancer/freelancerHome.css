@@ -1,0 +1,214 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.userCard{
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;  
+    
+
+}
+
+.detailsDiv{
+    background-color: rgb(245, 245, 245);
+    height: 100vh;
+}
+
+.currentProject{
+    padding-top:35px;
+    margin-top:12vh;
+    background-color: white;
+    height: 17vh;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(219, 219, 219);  
+}
+
+.projStatus{
+    background-color:rgb(240, 240, 240);
+    height: 12.2vh;
+    margin-top:-20px;
+    border-radius: 10px;
+    margin-left: 80px;
+    padding-left: 70px;
+}
+
+.prjName{
+    margin-left: -25px;
+}
+
+.homeCard{
+    background-color: white;
+    height: 65%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(219, 219, 219);
+
+}
+
+
+.features{
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px;
+    height:60vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-left: -28px;
+}
+
+.featuresHolder{
+    padding-right: 30px;
+}
+
+.projects{
+    width: 100%;
+    height: 57vh;
+    background-color: rgb(194, 194, 62);
+}
+
+.butN{
+    border:none;
+    padding: 8px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.butN:hover{
+    background-color: rgb(236, 235, 235);    
+}
+
+
+.fontS{
+    transition: all 0.2s;
+}
+
+.fontS:hover{
+   text-shadow: 0px 0px 0.5px blue;
+}
+
+
+
+.findProjects{
+    color:white;
+    font-weight: bold;
+    background-color: blue;
+    padding:15px;
+    border-radius:15px;
+}
+
+.findProjects:hover{
+    color: white;
+}
+
+.listItems{
+    font-size: 1.3em;
+}
+
+.headPro{
+    font-size: 2em;
+}
+
+.OldProjects{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: -28px;
+}
+
+.fnPrj{
+    padding: 10px 10px 10px 10px;
+    height: 41px;
+    background-color: blue;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top:-5px;
+    margin-right: 115px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:600px){
+
+    .detailsDiv{
+        height: 180vh;
+    }
+    
+    .mainDiv{
+        height: 280vh;
+    }
+
+    .currentProject{
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        margin-top: 80px;
+        background-color: white;
+        height: 30vh;
+        border-radius: 15px;
+        
+    }
+
+    .prjName{
+        margin-left: 0px;
+        margin-top:-70px;
+    }
+
+    .homeCard{
+        height: 70%;
+    }
+
+    .headPro{
+        font-size: 1.6em;
+    }
+
+    .OldProjects{
+        margin-top: 10px;
+    }
+
+    .currentProjectHead{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .features{
+        margin-left: 14px;
+    }
+
+}
+
+.scrollDiv{
+    overflow-y: auto;
+    margin-right:10px;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }
+

@@ -1,0 +1,78 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/prjPages/prjClientDetails.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-2"><a href="javascript:history.back()" style="text-decoration: none !important;font-weight: bold;color: blue">Go back</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/<%= utype %>" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-6">
+            <div class="row infoHolder">
+                <div class="col-6 blueDiv">
+                        <center>
+                            <img src="<%= clData.Cimage %>" alt="" height="200px" width="200px" style="border-radius: 50%;margin-top:100px">
+                        </center>
+                        <center>
+                            <h3 class="mt-3" style="color:white;font-weight: bold;"><%= clData.Cname %></h3>
+                        </center>
+            
+                        <center>
+                            <i class="fas fa-star" style="color:white"></i>
+                            <i class="fas fa-star" style="color:white"></i>
+                            <i class="fas fa-star" style="color:white"></i>
+                            <i class="fas fa-star" style="color:white"></i>
+                            
+                        </center>
+                </div>
+                <div class="col-6 mainInfo pl-4">
+
+                        <h3 class="pt-4 mt-3"><b>Company type</b></h3>
+                        <h3><%= clData.companyType %></h3>
+
+                        <h3 class="pt-5 mt-5"><b>Company established</b></h3>
+                        <h3><%= clData.established %></h3>
+
+                        <h3 class="pt-5 mt-5"><b>No of projects done</b></h3>
+                        <h3>48</h3>
+
+                        
+
+                </div>
+            </div>
+         
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

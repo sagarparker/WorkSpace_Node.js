@@ -1,0 +1,214 @@
+.mainDiv{
+    height:100vh;
+    background-color: rgb(248, 248, 248);
+}
+
+.notfHolder{
+    height: 85vh;
+    margin: 77px 0px 0px 175px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 12px rgb(201, 201, 201);
+}
+
+.wtNotf{
+    border-right:solid 2px rgb(241, 241, 241);
+}
+
+.wtNotf,.wsNotf{
+    height: 85vh;
+}
+
+.wtBar,.wsBar{
+    height: 50px;
+    background-color: blue;
+    color:white;
+}
+
+.wtBar{
+    border-radius: 10px 0px 0px 0px;
+}
+
+.wsBar{
+    border-radius: 0px 10px 0px 0px;
+}
+
+.wtHolder,.wsHolder{
+    height: 77vh;
+    padding: 10px;
+}
+
+
+.newNotfWs{
+    box-shadow: 0px 0px 5px gainsboro;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.scrollDiv{
+    overflow-y: scroll;
+    overflow-x:hidden;
+    height: 74vh;
+    padding: 15px;
+}
+
+
+
+.vmBtn{
+    padding: 10px 32px 10px 32px;
+    background-color: blue;
+    color:white;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.dclBtn{
+    padding: 8px 40px 8px 40px;
+    background-color: gainsboro;
+    color: black;
+    border-radius: 8px;
+    font-weight: bold;
+    border:none;
+    margin-top:-10px;
+    margin-left: -10px;
+    transition: all 0.3s;
+}
+
+.vmBtn:hover{
+    background-color: rgb(4, 4, 214);
+
+}
+
+.dclBtn:hover{
+    background-color: rgb(207, 207, 207);
+}
+
+.newNotfWorkSpace{
+    box-shadow: 0px 0px 5px gainsboro;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.acptBtn{
+    padding: 8px 42px 8px 42px;
+    background-color: blue;
+    color:white;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border:none;
+}
+
+.decBtn{
+    padding: 8px 52px 8px 52px;
+    background-color: gainsboro;
+    color: black;
+    border-radius: 8px;
+    font-weight: bold;
+    border:none;
+    margin-top:-10px;
+    margin-left: -10px;
+    transition: all 0.3s;
+}
+
+.viewBtn{
+    background-color: blue;
+    padding: 10px 52px 10px 52px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.viewBtn:hover{
+    background-color: rgb(4, 4, 214);
+
+}
+
+.decBtn:hover{
+    background-color: rgb(207, 207, 207);
+}
+
+@media screen and (max-width:600px){
+    .mainDiv{
+        height: 200vh;
+    }
+
+    .notfHolder{
+        height: 92vh;
+        margin: 60px 0px 0px 0px;
+        border-radius: 0px;
+        background-color: white;
+        box-shadow: 0px 0px 12px rgb(201, 201, 201);
+    }
+
+    .wtBar,.wsBar{
+        height: 44px;
+        background-color: blue;
+        color:white;
+        border-radius: 0px;
+    }
+
+    .wtNotf{
+        height: 100vh;
+    }
+
+    .scrollDiv{
+        height: 80vh;
+    }
+
+    .vmBtn{
+        padding: 10px 22px 10px 22px;
+       
+    }
+    
+    .dclBtn{
+        padding: 8px 35px 8px 35px;
+    
+    }
+
+    .viewBtn{
+        padding: 10px 15px 10px 15px;
+    }
+    
+    .decBtn{
+        padding: 8px 30px 8px 30px;
+    }
+}
+
+
+
+
+.scrollDiv .newNotfWs:nth-of-type(n+2){
+    margin-top:20px;
+}
+
+.scrollDiv .newNotfWorkSpace:nth-of-type(n+2){
+    margin-top: 20px;
+}
+
+
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }

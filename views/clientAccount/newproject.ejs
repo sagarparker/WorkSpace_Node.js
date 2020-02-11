@@ -1,0 +1,105 @@
+
+<!-- HEADER -->
+<style>
+
+.mainDiv{
+    height: 100vh;
+    color:black;
+}
+
+.ptitle{
+    border-radius: 10px;
+    padding: 4px;
+    color:black;
+    border:1px solid rgb(185, 185, 185);
+    width: 35vw;
+}
+
+.subBtn{
+    padding:7px 30px 7px 30px;
+    color:white;
+    background-color: blue;
+    font-weight: bold;
+    border-radius: 10px;
+    border:none;
+    transition: all 0.2s;
+}
+
+.subBtn:hover{
+    background-color: rgb(5, 5, 218);
+}
+
+@media screen and (max-width:600px){
+   .ptitle{
+       width: 80vw;
+   }
+}
+
+</style>
+<% include ../partials/headerOne %>
+
+<link rel="stylesheet" href="/CSS/clientAcc/clientAccDetails.css">
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/client" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client/accDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv">
+    <div class="container-fluid">
+        <div class="row pl-3 pl-md-5">
+            <div class="col-12 col-md-5 p-3">
+                <h2 class=" pt-3 pl-4 pl-md-0" style="color:blue;margin-top: 42px;"><b>Project details</b></h2>
+
+                <form action="/workspace/client/newproject" method="POST">
+
+                    <h3 class="mt-5"><b>Project name</b></h3>
+                    <input type="text" name="pname" class="ptitle" placeholder="Enter a project name" style="color: black;font-weight: 100" required/>
+    
+                    <h3 class="mt-3"><b>Project type</b></h3>
+                    <select name="ptype" id="" class="ptitle" style="padding:9px 10px 9px 1px;color: black;font-weight: 100" required>
+                        <option disabled selected>Select a project type</option>
+                        <option value="Website application" >Website application</option>
+                        <option value="Android/IOS application">Android/IOS application</option>
+                        <option value="Standalone software">Standalone software</option>
+                        <option value="Data science">Data science</option>
+                        <option value="Graphic design">Graphic design</option>
+                        <option value="Web/Software UI/UX">Web/Software UI/UX</option>
+                        <option value="Video editing">Video editing</option>
+                    </select>
+    
+                    <h3 class="mt-3"><b>Project description</b></h3>
+                    <textarea name="pdesc" cols="30" rows="6" placeholder="Enter detail project description" class="ptitle" style="color: black;font-weight: 100" required></textarea>
+                    
+                    <input type="submit" value="SUBMIT" class="subBtn mt-4">
+
+                </form>
+                
+            </div>
+            <div class="col-0 col-md-7 d-none d-md-block">
+                <img style="margin-top: 45px;" src="/Images/Client_images/clientAccount/newProject/newProjectForm.svg" alt="Failed to load images" height="90%" width="100%">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

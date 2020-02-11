@@ -1,0 +1,63 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/clientAcc/projSpec.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/freelancer" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client/accDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-5">
+            <h2 style="color: blue;margin-top: 75px;margin-left: 50px;" ><b>Project specifications</b></h3>
+            <div class="specListHolder p-2 ">
+                <div class="scrollDiv pt-2 pr-3">
+                    <ul style="margin-left: -15px;">
+                        <% pData.projSpec.forEach(function(pd){ %>
+                            <li><h5><%= pd.spec %></h5></li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <form action="/workspace/client/specification/<%= pData.pName%>/<%= pData._id %>/<%= projStat %>" method="POST">
+                <input type="text" name="specFld" id="" class="mt-4 inpField" placeholder="Enter a new specification to the list">
+                <button type="submit" class="subBtn" >ADD</button>
+            </form>
+        </div>
+        <div class="col-7 ">
+            <center>
+                <h4 style="font-weight: bold;margin-top:95px;" class="pl-5 pr-5">Your project budget will be evaluated by the project manager based on your project specifications.</h4>
+            </center>
+            <img src="/Images/Client_images/clientAccount/newProject/teamSpec.svg " class="mt-4" style="margin-left: 50px;margin-bottom: 50px;" width="650px" height="320px">
+            <center>
+                <a href="/workspace/client/pmrequest/<%= pData.pName %>/<%= pData._id %>" class="nxtBtn" style="color:white;text-decoration: none;">NEXT</a>
+            </center>
+        </div>
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

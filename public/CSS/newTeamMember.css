@@ -1,0 +1,159 @@
+.mainDiv{
+    height: 95vh;
+}
+
+.freelancerLst{
+    height: 20vh;
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 7px gray;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+}
+
+.frlImg{
+    width: 105px;
+    height: 105px;
+}
+
+.listHolder{
+    height: 90vh;
+    overflow:scroll;
+    overflow-x: hidden;
+    
+    
+}
+
+.addFrl{
+  margin-top: 35px;
+}
+
+.infoBtn{
+  margin-top: -30px;
+  margin-right: 5px;
+}
+
+.infoBtn:hover{
+  cursor: pointer;
+}
+
+.doneBtn{
+  background-color: white;
+  padding: 13px 33px 13px 33px;
+  margin-top: 20px;
+  font-weight: bolder;
+  border-radius: 30px;
+  font-size: 1.1em;
+  box-shadow: 0px 0px 7px rgb(82, 142, 255);
+  transition: all 0.3s;
+}
+
+.doneBtn:hover{
+  box-shadow: 0px 0px 10px blue;
+}
+
+.imgHolder{
+  background-image: url("../Images/wsTeam/joinUs.svg");
+  background-size: cover;
+  background-position: 20px;
+  background-repeat: no-repeat;
+  height: 93.75vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.listStyle{
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+
+
+ol li{
+  margin-top: 30px;
+}
+
+
+
+/* width */
+.listHolder::-webkit-scrollbar {
+    width: 15px;
+   
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border:2px solid rgb(209, 204, 204);
+    border-radius: 10px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:blue; 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(4, 4, 207); 
+  }
+
+
+  @media screen and (max-width:700px){
+
+    .mainDiv{
+      height: 190vh;
+    }
+
+    .freelancerLst{
+        height: 70vh;
+    }
+
+    .frlImg{
+        margin-top: 1vh;
+        width: 150px;
+        height: 150px;
+        margin-left: 15vw;
+    }
+
+    .addFrl{
+        margin-top: 15px;
+        margin-left: 32vw;
+    }
+
+    .listHolder{
+      order: 2;
+    }
+
+    .imgHolder{
+      order: 1;
+      background-position: 0px;
+      padding: 10px;
+    }
+
+    .pageHead{
+      font-size: 1.4em;
+      text-align: center;
+    }
+
+    .infoBtn{
+      margin-top: -30px;
+      margin-left: 30px;
+      
+    }
+
+    
+    
+  }

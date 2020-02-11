@@ -1,0 +1,71 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/freelancer/reqTeamDetails.css">
+
+<% include ../partials/headerTwo %>
+
+<!-- START HERE -->
+
+<div class="container-fluid mainDiv">
+    <div class="row">
+        <div class="col-12 col-md-5 teamInfo">
+            <h1 class="mt-5" ><b><%= reqWsTeam.teamName %></b> </h1>
+            <h3 class="mt-2"><%= reqWsTeam.teamCategory %></h3>
+            <h4 class="mt-5"><b >Team rating :</b> 4/5</h4>
+            <h4 class="mt-5"><b>No of freelancers in team</b> : <%= reqWsTeam.teamMembers.length %></h4>
+            <center>
+                    <h4 class="mt-4 mt-md-1 "><b>No of projects done by the team</b> : 12</h4>                                          
+            </center>
+           
+            <form action="/workspace/freelancer/acceptReq/<%= joinTeamID %>" method="POST">
+                <button type="submit" class="joinTeam mt-4">Join <%= reqWsTeam.teamName %></button>
+            </form>
+
+        </div>
+        <div class="col-12 col-md-7">
+            <div class="teamMembersHolder mt-5 pt-4">
+                <div class="scrollDiv">
+                        <% reqFreelancerDetl.forEach(function(frlData){ %>
+                            <% for(var i = 0 ; i < reqWsTeam.teamMembers.length ; i++){ %>
+                                <% if( reqWsTeam.teamMembers[i].memberID == frlData.detailsOwner ) { %>
+                                    <div class=" container-fluid teamMembersContainer mb-3">
+                                        <div class="row">
+                                            <div class="col-12 col-md-3 toCenter">
+                                                <img src="<%= frlData.Fimage%>" style="border-radius: 50%" class="ml-0 ml-md-3" height="80px" width="80px" alt="Failed to load">
+                                            </div>
+                                           
+                                            <div class="col-12 col-md-6 pt-1 toCenter">
+                                                
+                                                        <h3 style="font-weight: bold"><%= frlData.fname %> <%= frlData.lname %></h3>
+                                            
+                                               
+                                                 
+                                                        <h4 class="mt-1 centerH4" ><%= frlData.designation %></h4>
+                                                 
+                                                  
+                                            </div>
+                                            <div class="col-12 col-md-3 toCenter">
+                                                    <h3 class="mt-4"><span style="color: blue">4</span>/5</h3>
+                                            </div>
+                                        </div>
+                                            
+                                    </div>
+                                
+                                <% } %>
+                            <% } %>
+                        <% }); %>
+                </div>
+            </div>
+     
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

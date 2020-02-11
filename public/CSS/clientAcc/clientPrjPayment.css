@@ -1,0 +1,23 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.cInp{
+    padding: 9px;
+    border-radius: 10px;
+    border:1px solid gray;
+}
+
+.subBtn{
+    padding: 10px 20px 10px 20px;
+    background-color: blue;
+    color:white;
+    font-weight: bold;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.subBtn:hover{
+    background-color: rgb(6, 6, 185);
+}

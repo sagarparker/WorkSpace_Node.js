@@ -1,0 +1,70 @@
+.mainDiv{
+    background-image: url(../Images/wsTeam/finalTeam.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.nextBtn{
+    background-color: blue;
+    padding: 15px 30px 15px 30px;
+    border:none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.2s ease;
+    box-shadow: 0px 2px 6px gray;
+}
+
+.nextBtn:hover{
+    box-shadow: 0px 0px 12px gray;
+}
+
+.errorMsg{
+    background-color: red;
+    padding: 15px 30px 15px 30px;
+    border:none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.frlCard{
+    background-color: white;
+    height: 60vh;
+    border-radius: 30px;
+    box-shadow: 0px 0px 8px rgb(177, 176, 176);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.delBtn{
+    padding: 10px 25px 10px 25px;
+    background-color: red;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0px 2px 4px gray;
+    color: white;
+    border:none;
+
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:700px){
+    .nextBtn{
+     padding: 10px 27px 10px 27px;
+     font-size: 0.9em;
+    }
+}

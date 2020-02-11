@@ -1,0 +1,72 @@
+
+    .mainDiv{
+        height: 100vh;
+    }
+    
+    .blueBox{
+        height: 100vh;
+        background-color:blue;
+    }
+    
+    .doneBtn{
+        padding: 10px 20px 10px 20px;
+        background-color: white;
+        color:black;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    
+    .reqBox{
+        height: 109px;
+        margin-bottom: 17px;
+        background-color: rgb(243, 243, 243);
+        box-shadow: 0px 0px 5px gray;
+        border-radius: 10px;
+        padding:10px;
+    }
+    
+    .reqBtn{
+        padding: 10px ;
+        background-color: blue;
+        border-radius: 10px;
+        border:none;
+        color:white;
+        font-weight: bold;
+        
+        
+    }
+    
+    
+    .scrollDiv{
+        margin-top: 60px;
+        height: 85vh;
+        overflow-y: scroll;
+        padding-right: 17px;
+        padding-left: 10px;
+        padding-top:12px;
+    }
+    
+    .scrollDiv::-webkit-scrollbar {
+        width: 15px;
+    }
+    
+    /* Track */
+    .scrollDiv::-webkit-scrollbar-track {
+        border:2px solid rgb(233, 233, 233);
+        border-radius: 5px;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+      }
+       
+      /* Handle */
+    .scrollDiv::-webkit-scrollbar-thumb {
+        background:rgb(204, 204, 204); 
+        border-radius: 10px;
+        transition: all 0.2s;
+    }
+    
+    /* Handle on hover */
+    .scrollDiv::-webkit-scrollbar-thumb:hover {
+        background: rgb(175, 175, 175); 
+    }

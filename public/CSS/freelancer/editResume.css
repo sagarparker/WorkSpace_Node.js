@@ -1,0 +1,65 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.infoHodler{
+    height: 100vh;
+    margin-left: 200px;
+}
+
+.imageHolder{
+    height: 100vh;
+}
+
+.fResume{
+    font-weight: bold;
+    background-color: rgb(80, 80, 80);
+    color: white;
+    padding: 10px 20px 10px 20px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+
+.fResume:hover{
+    background-color: blue;
+}
+
+.newInp{
+    padding: 5px;
+    border:solid 1px rgb(211, 211, 211);
+    border-radius: 5px;
+    width: 20vw;
+}
+
+.forPadding{
+    padding-left: 150px;
+}
+
+.addBtn{
+    border:none;
+    background-color: blue;
+    color:white;
+    font-weight: bold;
+    padding: 6px 20px 6px 20px;
+    margin-left: 8px;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+
+.addBtn:hover{
+    background-color: rgb(5, 5, 216);
+}
+
+@media screen and (max-width:600px){
+    .forPadding{
+        padding-left: 10px;
+    }
+
+    .newInp{
+        padding: 5px;
+        border:solid 1px rgb(211, 211, 211);
+        border-radius: 5px;
+        width: 64vw;
+    }
+}

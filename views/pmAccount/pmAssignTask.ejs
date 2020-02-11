@@ -1,0 +1,83 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/pmAcc/pmAssignTask.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-2"><a href="/workspace/projectmanager/project/<%= pdt._id %>/<%= pdt.pName %>" style="text-decoration: none !important;font-weight: bold;color: blue">Project homepage</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/projectmanager" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/freelancer/accountDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h3 style="margin-top: 78px;margin-left: 50px;font-weight: bold;">Assign tasks to WsTeam members</h3>
+            <div class="scrollDiv mt-4 pt-3">
+                <div class="row" style="padding-left: 140px;">
+                    <% frl.forEach(function(frlD){ %>
+                        <% for(var i = 0 ; i < pdt.memberList.length;i++){%>
+                            <% if(frlD.detailsOwner == pdt.memberList[i].usrID ){ %>
+                                <div class="col-3 blueCard">
+                                    <center>
+                                        <img src="<%= frlD.Fimage %>" style="border-radius: 50%;margin-top: 100px;" alt="" width="150px" height="150px">
+                                    </center>
+                                    <center>
+                                        <h4 class="mt-2" style="font-weight: bold;color:white"><%= frlD.fname %> <%= frlD.lname %></h4>
+                                    </center>
+                                    <center>
+                                        <h5 style="color:rgb(221, 221, 221);font-weight: bold;"><%= frlD.designation %></h5>
+                                    </center>
+                                </div>  
+                                <div class="col-8 taskCard">
+                                    <h4 class="mt-3"><b><%= tDate %> Tasks:</b></h4>
+                                    <div class="tasks scrollBox">
+                                        <ul style="margin-left: -19px;padding-top: 10px;">
+                                                <% pdt.projectTasks.forEach(function(pd){ %>
+                                                    <% if(pd.frlID == frlD.detailsOwner){ %>
+                                                        <li style="font-size: 1.2em;">
+                                                            <%= pd.frlTask %>
+                                                        </li>
+                                                    <% } %>
+                                                <% }); %>
+                                        </ul>
+                                    </div>
+                                    <form action="/workspace/projectmanager/assigntask/<%= pdt._id %>/<%= frlD.detailsOwner %>/<%= frlD.fname %> <%= frlD.lname %>" class="mt-3" method="POST">
+                                        <input type="text" style="width:80%;" name="prjTask" class="inp" id="" placeholder="Add a new task for today" required>
+                                        <button type="submit" class="subBtn ml-1">Add task</button>
+                                    </form>
+                                </div>
+                            <% } %>
+                            
+                        <%}%>
+                        
+                    <% }); %>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

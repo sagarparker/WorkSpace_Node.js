@@ -1,0 +1,98 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/prjPages/prjReview.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/<%= utype %>" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv conatiner-fluid">
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8">
+            <div class="row infoHolder">
+                <div class="col-4 blueDiv">
+                    <center>
+                        <i class="fas fa-project-diagram fa-4x" style="padding-top: 190px;color:white"></i>
+                    </center>
+                    <center>
+                        <h3 class="pt-2" style="color:white;font-weight: bold;"><%= pData.pName %><br>review</h3>
+                    </center>
+               
+                </div>
+                <div class="col-8 p-4">
+                    <div class="row pt-3">
+                        <div class="col-6">
+                            <h4><b>Category</b></h4>
+                            <h5><%= pData.pType %></h5>
+                        </div>
+                        <div class="col-6">
+                                <h4><b>Created on</b></h4>
+                                <h4><%= pData.pCreationDate %></h4>
+                        </div>
+                    </div>
+
+                    <div class="row pt-5">
+                        <div class="col-6">
+                            <h4><b>Budget</b></h4>
+                            <h5>$<%= pData.pBudget %></h5>
+                        </div>
+                        <div class="col-6">
+                            <h4><b>Deadline</b></h4>
+                            <h5><%= pData.pDeadline %></h5>
+                        </div>
+                    </div>
+
+                    <form action="" method="POST" class="mt-4">
+                        <h4><b>Review:</b></h4>
+                        <% if(success && success.length > 0 ){%>
+      
+        
+                            <div class="alert alert-info p-1 pos " style="width:50%;text-align: center;margin-top: -40px;margin-left:100px" role="alert">
+                              <b ><%= success %></b>
+                            </div>
+                          
+                          
+                        <% } %>
+                        <textarea rows="4" cols="66" placeholder="Enter your project review here" class="txtA" name="txtReview" required></textarea>
+                        <h4 class="mt-1"><b>Rating</b></h4>
+                        <input type="number" name="prjRating"  max="5" min="0" placeholder="Enter your project rating" class="rInp" required>
+                        <input type="submit" value="SUBMIT REVIEW" class="subBtn">
+                    </form>
+
+   
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+
+        </div>
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

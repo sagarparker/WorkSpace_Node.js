@@ -1,0 +1,102 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.infoHolder{
+    height: 100vh;
+    background-color: blue;
+}
+
+.fnBtn{
+    color: black;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;    
+    transition: all 0.4s;
+}
+
+.fnBtn:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+.scrollDiv{
+    overflow-y: scroll;
+    height: 85vh;
+    margin-top:76px;
+}
+
+.reqHolder{
+    height: 20vh;
+    box-shadow: 0px 0px 7px rgb(197, 197, 197);
+    margin-left: 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.reqHolder:nth-of-type(1){
+    margin-top: 7px;
+}
+
+.sendReq{
+    background-color: blue;
+    font-weight: bold;
+    color:white;
+    border-radius: 10px;
+    border:none;
+    padding: 10px 20px 10px 20px;
+    transition: 0.3s all;
+}
+
+.sendReq:hover{
+    background-color: rgb(12, 12, 197);
+}
+
+
+
+@media screen and (max-width:600px){
+    .scrollDiv{
+        margin-top: 50px;
+    }
+
+    .mainDiv{
+        height: 200vh;
+    }
+
+    .reqHolder{
+        height: 47vh;
+    }
+
+    .tc{
+        margin-top: -25px;
+    }
+
+}
+
+
+
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }

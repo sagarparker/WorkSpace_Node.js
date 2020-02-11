@@ -1,0 +1,99 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/pmAcc/acceptedWsteamReq.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/projectmanager" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/freelancer/accountDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-5 blueBox">
+            <center>
+                    <h3 style="color: white;margin-top: 270px;font-weight: bold;" class="mb-4">
+                            
+                                Send accepted list of <br> Wsteams to the client
+                            
+                    </h3>
+                    <form action="/workspace/projectmanager/sendlist/<%= pid %>/<%= pname %>" method="POST">
+                        <button type="submit" class="sendBtn" >Send list</button>
+                    </form>
+                </center>
+           
+        </div>
+        <div class="col-7 listHolder">
+            <div class="scrollDiv p-3">
+                
+                <% wstD.forEach(function(ws){ %>
+                    <% for(var i = 0; i < prjD.acptTeamReq.length; i++){ %>
+                        <% if(ws._id == prjD.acptTeamReq[i].teamID){ %>
+                            <div class="cHolder">
+                                <div class="row">
+                                        <div class="col-4">
+                                                <h3 style="color:blue" class="pt-4 pl-3">
+                                                    <b>
+                                                            <%= ws.teamName %>
+                                                    </b>
+                                                </h3>
+                                        </div>
+                                        <div class="col-4">
+                                                <h5 style="padding-top: 28.5px;" class="pl-4">
+                                                    <%= ws.teamCategory %>    
+                                                </h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <% if(ws.wsTeamReviews){ %>
+                                                <script>
+                                                    var rating = 0;
+                                                </script>
+                                            
+                                            <% ws.wsTeamReviews.forEach(function(wsd){ %>
+                                                <script>
+                                                    rating = rating + <%= wsd.stars %> 
+                                                </script>
+                                             
+                                            <% });  %>
+                                                <h4 style="padding-top: 28.5px;"><span style="font-weight: bold;"> Team rating : </span>
+                                                    <script>
+                                                        document.write(rating/<%= ws.wsTeamReviews.length %>);
+                                                        rating = 0;
+                                                    </script>
+                                                </h4>
+                                              
+                                            <% } %>
+                                        </div>
+                                </div>                             
+                            </div>
+                        <% } %>
+                    <% } %>
+                <% }); %>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

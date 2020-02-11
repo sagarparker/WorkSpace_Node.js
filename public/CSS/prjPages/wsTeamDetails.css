@@ -1,0 +1,43 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.blueDiv{
+    height: 100vh;
+    background-color: blue;
+}
+
+.scrollDiv{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 40vh;
+}
+
+.scrollDivHolder{
+    height: 100vh;
+}
+
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }

@@ -1,0 +1,73 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/clientAcc/projbudget.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/client" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client/accDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv">
+    <div class="container-fluid">
+        <div class="row pl-3 pl-md-5">
+            <div class="col-12 col-md-6 p-3">
+                <h2 class=" pt-3 pl-4 pl-md-0" style="color:blue;margin-top: 42px;"><b>Project budget</b></h2>
+
+                <form action="/workspace/client/<%= urlID %>/projbudget" method="POST">
+
+                    <h3 class="mt-5"><b>Project duration</b></h3>
+                    <input type="number" name="pdur" class="ptitle" placeholder="Enter no of days" style="color: black;font-weight: 100" required/>
+    
+                    <h3 class="mt-4"><b>Project budget</b></h3>
+                    <input type="number" name="pbudg" class="ptitle" placeholder="Enter budget in $" style="color: black;font-weight: 100" required/>
+    
+                    
+
+                    <h3 class="mt-4"><b>Budget criteria</b></h3>
+                    <select name="budgetCriteria" id="" class="ptitle" style="padding:9px 10px 9px 1px;color: black;font-weight: 100;" required>
+                        <option disabled selected>Select a budget criteria</option>
+                        <option value="High grade product and high budget" >High grade product and high budget</option>
+                        <option value="Medium grade product and intermediate budget">Medium grade product and intermediate budget</option>
+                        <option value="Functional grade product and economical budget">Functional grade product and economical budget</option>
+                    </select>
+
+                    
+                    <h3 class="mt-4"><b>Project deadline</b></h3>
+                    <input type="date" name="pdeadline" class="ptitle" placeholder="Enter project deadline" style="color: black;font-weight: 100" required/>
+    
+    
+                    <br>
+                    <input type="submit" value="SUBMIT" class="subBtn mt-3">
+
+                </form>
+            </div>
+            <div class="col-5 d-none d-md-block">
+                <img src="/Images/Client_images/clientAccount/newProject/Creditcard.svg" style="margin-left: -15px;margin-top:25px" alt="" height="100%" width="100%">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

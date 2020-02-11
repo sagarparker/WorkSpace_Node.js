@@ -1,0 +1,33 @@
+
+
+.cont{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.formCont{
+    height: 540px;
+ 
+}
+
+.form-control{
+    background-color: rgb(243, 243, 243);
+}
+
+#subBtn{
+    background-color: blue;
+    color:white;
+    font-weight: bold;
+}
+
+.fc{
+    position: relative;
+    top:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    
+}
+

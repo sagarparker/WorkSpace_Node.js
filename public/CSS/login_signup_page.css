@@ -1,0 +1,163 @@
+body{
+background-image: url(../Images/login_signup_page_images/bglarge.jpg);
+background-position: top;
+background-size: cover;
+/* https://images.pexels.com/photos/532173/pexels-photo-532173.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 */
+}
+
+#lscardOut{
+display: flex;
+align-items: center;
+height: 100vh;
+padding: 40px;
+padding-left: 35%;
+padding-right: 35%;
+transition: all 0.7s;
+}
+
+#lscardin{
+    background-color:white;
+    height:490px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px black;
+}
+
+#logBtn{
+background-color: white;
+border-top-left-radius: 15px;
+height: 50px;
+padding: 10px;
+font-weight: bold;
+cursor: pointer;
+transition: all 1s;
+}
+
+#signupBtn{
+background-color:rgb(231, 227, 227);
+border-top-right-radius: 15px;
+height: 50px;
+padding: 10px;
+font-weight: bold;
+cursor: pointer;
+transition: all 1s;
+}
+
+
+
+@media screen and (max-width:600px){
+ 
+    body{
+        background-image: url(../Images/login_signup_page_images/bgcards.png);
+    }
+
+    #lscardOut{
+        
+        padding-left:  15%;
+        padding-right: 15%;
+        padding: 0px;
+        }
+
+    #lscardin{
+        
+        height:100%;
+        width: 100%;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+
+    #logBtn{
+        background-color: white;
+        border-top-left-radius: 0px;
+        height: 50px;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 1s;
+    }
+    
+    #signupBtn{
+        background-color:rgb(231, 227, 227);
+        border-top-right-radius: 0px;
+        height: 50px;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 1s;
+    }
+
+}
+
+
+
+.btnStyle{
+    background: blue;
+    border:none;
+    color: white;
+    font-weight: bolder;
+    transition: all 0.2s;
+    
+}
+
+.btnStyle:hover{
+    background: rgb(2, 2, 221);
+    border:none;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 0px 0px 3px black;
+    transition: all 0.2s;
+}
+
+#fp{
+    text-decoration: none;
+    color: blue;
+    font-weight: 500;
+}
+
+#fp:hover{
+    text-shadow: 0px 0px 1px gray;
+}
+
+
+
+
+
+
+#loginID,#loginPSWD,#fname,#lname,#uname,#upass{
+border-radius: 5px;
+border: 1px solid rgb(131, 130, 130);
+
+}
+
+
+
+#loginSubmit,#signupSubmit{
+    border-radius: 5px;
+}
+
+#innerSignup,#innerLogin{
+color: blue;
+cursor: pointer;
+font-weight: bold;
+}
+
+#innerSignup:hover{
+    text-shadow: 0px 0px 1px gray;
+}
+
+
+
+input:focus{
+    box-shadow:0px 0px 5px blue;
+}
+
+#r1,#r2{
+    box-shadow: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #999;
+}
+input:focus::-webkit-input-placeholder {
+    color: blue;
+}

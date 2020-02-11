@@ -1,0 +1,43 @@
+.mainDiv{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.infoHolder{
+    height: 80vh;
+    border-radius: 10px;
+    margin-top:90px;
+    box-shadow: 0px 0px 20px rgb(202, 202, 202);
+}
+
+.blueDiv{
+    height: 80vh;
+    background-color: blue;
+    border-radius:10px 0px 0px 10px;
+}
+
+.descDiv{
+    overflow-y: auto;
+}
+
+.txtA{
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.rInp{
+    border-radius: 10px;
+    width:390px;
+    border:1px solid rgb(168, 164, 164);
+    padding:5px;
+}
+
+.subBtn{
+    padding: 8px 20px 8px 20px;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    color:white;
+    font-weight: bold;
+    margin-left: 5px;
+}

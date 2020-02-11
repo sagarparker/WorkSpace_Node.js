@@ -1,0 +1,94 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/clientAcc/cPmRequest.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/client" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client/accDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-5 blueBox">
+                <center>
+                    <h2 style="font-weight: bold;color: white;" class="pl-0 pl-md-2 pr-0 pr-md-2 mainHead">Send request to project managers to work on your project.</h2>
+                </center>
+                <center>
+                    <h4 class="pl-2 pl-md-5 pr-2 pr-md-5 mt-4 mb-5" style="color: rgb(235, 235, 235);" >Check your notifications for responses from Project managers.</h5>
+                </center>
+                <center>
+                    <a href="/workspace/client" class="fnBtn" style="color: black;text-decoration: none;">Finish</a>
+                </center>
+
+                <center>
+                    <i class="fas fa-angle-double-down d-block d-sm-none fa-lg " style="margin-top: 100px;color:white"></i>
+                </center>
+            </div>
+            <div class="col-12 col-md-7 whiteBox">
+                <div class="scrollDiv">
+                    <% if(success && success.length > 0){%>
+                        <div class="alert alert-primary text-center" role="alert">
+                            <p style="font-size: 1.2em" class="pt-3"><b><%= success %></b></p>   
+                        </div>
+                    <% } %>
+    
+                    <% pmData.forEach(function(pData){ %>
+                        <% for(var i = 0 ; i < finalList.length ;i++){%>
+                            <% if(finalList[i] == pData.detailsOwner ){%>
+                                <div class="listCont p-1 p-md-0">
+                                    <div class="row">
+                                        <div class="col-3 col-md-2">
+                                            <img src="<%= pData.Fimage %>" class="mt-3 ml-3 d-none d-md-block" alt="Failed to load image" width="65px" height="65px" style="border-radius: 50%;">
+                                            <center>
+                                                    <img src="<%= pData.Fimage %>" class="mt-4 mt-md-3 ml-3 d-block d-md-none" alt="Failed to load image" width="65px" height="65px" style="border-radius: 50%;">
+                                            </center>
+                                        </div>
+                                        <div class="col-9 col-md-7 pl-4 pl-md-0">
+                                            <h5 class="mt-4 ml-2 ml-md-2">Send request to <a href="/workspace/freelancer/resume/<%= pData.detailsOwner %>" style="color:blue;text-decoration: none;font-weight: bold;"><%= pData.fname %> <%= pData.lname%></a> to be project manager of your project.</h5>
+                                        </div>
+                                       
+                                        <div class="col-12 col-md-3">
+                                            <form action="/workspace/client/pmrequest/<%= pData.detailsOwner %>/<%= pname %>/<%= pid %>" method="POST">
+                                                <input type="submit" value="Send request" class="reqBtn mt-2 mt-md-4 d-none d-md-block">
+                                                <center>
+                                                        <input type="submit" value="Send request" class="reqBtn mt-2 mt-md-4 ml-5 d-block d-md-none">
+                                                </center>
+                                                
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            <% } %>
+                        <%}%>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

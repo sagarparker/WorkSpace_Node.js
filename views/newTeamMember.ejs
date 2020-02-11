@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/x-icon" href="/Images/landingPage_images/projectlogo.png"/>
+        <title>WorkSpace</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+     
+        
+    <!-- ANIMATE CSS LINK -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    
+    <!-- DEFAULT CSS -->
+
+    <link rel="stylesheet" href="/CSS/pageDefault.css">
+    
+    
+    <!-- BOOTSTRAP CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- BOOTSTRAP JQUERY,JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/loadingAni.css">
+    <link rel="stylesheet" href="/CSS/newTeamMember.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/JS/loadingAni.js"></script>
+    <script src="/JS/defaultPage.js"></script>
+
+  
+    
+</head>
+<div class="loader">
+        <i class="fas fa-sync-alt fa-3x fa-spin"></i>
+</div>
+
+<body>
+
+
+<nav class="navbar  navbar-dark  navbar-expand-sm fixed-top" >
+
+            <div class="navbar-header" style="color:white" id="nav_head">
+                    <img src="/Images/landingPage_images/projectlogo.svg" alt="logo" width="40px" height="40px" style="padding-right:0px;padding-bottom: 4px">
+                    <div class="navbar-brand">WorkSpace</div>
+                    
+            </div>          
+</nav>
+
+<div class="container-fluid mainDiv">
+    <div class="row mt-5 pt-2">
+        <div class="col-12 col-md-7 listHolder">
+            
+            <h3 class="m-4 pageHead" style="color: blue"><b>Send freelancers request to join your team:</b></h3>
+            <% if(success && success.length > 0 ){%>
+                
+                <div class="alert alert-info p-3 mb-3 ml-3 mr-3 mt-0 mt-md-2" role="alert" style="font-size: 1.2em;text-align: center">
+                  <b><%= success %></b>
+                </div>
+          
+          <% } %>
+
+                    
+                    
+                    <% freelancerList.forEach(function(frlList){ %>
+                    <% for(var x = 0;x < wsTeam.length ;x++){%>
+                    <% if(wsTeam[x] == frlList.detailsOwner && frlList.InATeam == false ){%>
+                        
+                    
+                <div class="freelancerLst  mt-4 mt-md-0" id="<%= frlList.detailsOwner %>">
+                    <div class="row">
+                            <div class="col-12 col-md-3 mt-0 mt-md-1">
+                                <img class="frlImg" src="<%= frlList.Fimage %>" alt="Failed to load images"  style="border-radius: 50%">
+                            </div>
+
+                            <div class="col-12 col-md-7">
+                                <table class="mt-4 mt-md-2 ml-3 ml-md-0">
+                                    
+                                            <tr>
+                                                <td><h5 style="font-weight: bold">Name</h5></td>
+                                                <td>&nbsp;&nbsp;&nbsp;:&nbsp; <td>
+                                                <td><h5> <%= frlList.fname  %> <%= frlList.lname%></h5></td>
+                                            </tr>
+                                            <tr>
+                                                <td><h5 style="font-weight: bold">Designation</h5></td>
+                                                <td>&nbsp;&nbsp;&nbsp;:&nbsp; <td>
+                                                <td> <h5 class="d-none d-md-block"><%= frlList.designation  %></h5> <h6 class="d-block d-md-none"><%= frlList.designation  %></h6></td>
+                                            </tr>
+                                            <tr>
+                                                <td><h5 style="font-weight: bold">Rating</h5></td>
+                                                <td>&nbsp;&nbsp;&nbsp;:&nbsp; <td>
+                                                <td>
+                                                <% if(frlList.frlReviews){ %>
+                                                    <script>
+                                                        var ratingFrl = 0;
+                                                    </script>
+                                                
+                                                <% frlList.frlReviews.forEach(function(frl){ %>
+                                                    <script>
+                                                        ratingFrl = ratingFrl + <%= frl.stars %> 
+                                                    </script>
+                                                 
+                                                <% });  %>
+                                                    <h5  style="color: blue;">
+                                                        <script>
+                                                            document.write(ratingFrl/<%= frlList.frlReviews.length %>);
+                                                            var ratingFrl = 0;
+                                                        </script> / 5
+                                                    </h5>
+                                                  
+                                                <% } %>
+                                                </td>
+                                            </tr>
+                                            
+                                    
+                                
+                                  
+                                    
+                                </table>
+
+                                <div class="<%= frlList.detailsOwner %>divTohide" style="display: none;">
+                                          
+                                    <table class="ml-3 ml-md-0">
+                                        <tr>
+                                            <td><h5><b>Age</b></h5></td>
+                                            <td>:&nbsp;</td>
+                                            <td> <h5><%= frlList.age %></h5</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><h5><b>Joined on &nbsp;&nbsp;&nbsp;</b></h5></td>
+                                            <td>:&nbsp;</td>
+                                            <td> <h5><%= frlList.FacCdate %></h5</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><h5><b>Education</b></h5></td>
+                                            <td>:&nbsp;</td>
+                                            <td> <h5><%= frlList.education %></h5</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><h5><b>Subscription</b></h5></td>
+                                            <td>:&nbsp;</td>
+                                            <td> <h5><%= frlList.FmembershipType || "Freelancer" %></h5</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><h5><b>Projects done</b></h5></td>
+                                            <td>:&nbsp;</td>
+                                            <td><h5>38</h5</td>
+                                        </tr>
+                                    </table>
+                                    
+                                </div>
+                                    
+                            </div>
+
+                            <div class="col-12 col-md-2">
+                                <img src="/Images/wsTeam/info-circle-solid.svg" alt="" width="40px" height="40px" class="infoBtn" id="<%= frlList.detailsOwner %>">
+                                <form action="/workspace/freelancer/teamMember/<%= teamID %>/<%= frlList.detailsOwner%>/<%= frlList.fname%>/<%= frlList.lname %>/<%= wsTeamDtl.teamName %>/<%= teamCtg %>" method="POST" style="display: inline">
+                                    <input type="image" id="<%= frlList.detailsOwner%>add" class="addFrl" src="/Images/wsTeam/plus-circle-solid.svg" alt="Submit" width="40" height="40">
+                                </form>
+                                
+                            </div>
+
+
+                    </div>
+                   
+                   
+                </div>
+            
+            
+            <%}%>
+            
+            <%}%>
+            <% });%>
+            
+       
+          
+        </div>
+
+        <div class="col-12 col-md-5 imgHolder">
+            
+            <h1 class="ml-3 d-none d-md-block" style="color: white"><b>Ws team Recruitment process </b></h1>
+            <h2 class="ml-3 d-block d-md-none" style="color: white;font-size: 2em"><b>Ws team Recruitment process </b></h2>
+            <ol class="listStyle">
+                <li>Send requests to multiple freelancers.</li>
+                <li>Wait for their response.</li>
+                <li>Recruit freelancers from the list of accepted request.</li>
+            </ol>
+
+            <a href="/workspace/freelancer/finalTeam/<%= teamID %>" class="doneBtn" style="text-decoration: none;color:blue">CONTINUE TO YOUR ACCOUNT</a>
+
+            <h5 class="mt-4 d-block d-sm-none" style="color: white"><u>Scroll down</u></h5>
+        </div>
+    </div>
+</div>
+
+<script src="/JS/newMember.js"></script>
+
+
+
+
+<!-- FOOTER -->
+
+<% include partials/footer %>
+
+
+                          
+    
+</body>
+</html>

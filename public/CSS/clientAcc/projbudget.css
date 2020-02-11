@@ -1,0 +1,31 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.ptitle{
+    border-radius: 10px;
+    padding: 4px;
+    color:black;
+    border:1px solid rgb(185, 185, 185);
+    width: 35vw;
+}
+
+.subBtn{
+    padding:7px 30px 7px 30px;
+    color:white;
+    background-color: blue;
+    font-weight: bold;
+    border-radius: 10px;
+    border:none;
+    transition: all 0.2s;
+}
+
+.subBtn:hover{
+    background-color: rgb(5, 5, 218);
+}
+
+@media screen and (max-width:600px){
+    .ptitle{
+        width: 80vw;
+    }
+}

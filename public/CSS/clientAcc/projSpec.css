@@ -1,0 +1,66 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.specListHolder{
+    margin-top: 40px;
+    height: 60vh;
+    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+}
+
+.scrollDiv{
+    overflow-y:auto;
+    height: 100%;
+}
+
+.inpField{
+    width: 400px;
+    border-radius: 10px;
+    border:1px solid rgb(197, 197, 197);
+    padding: 7px;
+}
+
+.subBtn{
+    background-color: blue;
+    padding:8px 41px 8px 41px;
+    color:white;
+    border:none;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+
+}
+
+.nxtBtn{
+    padding: 12px 40px 12px 40px;
+    background-color: blue;
+    margin-left: -50px;
+    color:white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }

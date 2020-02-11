@@ -1,0 +1,127 @@
+
+<!-- HEADER -->
+
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/pmAcc/pmNotf.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/client" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client/accDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder d-none d-md-block" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv">
+        <div class="container-fluid">
+            <div class="row">
+                    <div class="col-12 col-md-9 notfHolder">
+                        <div class="row">
+                            <div class="col-12 col-md-6 wtNotf">
+                                <div class="row">
+                                        <div class="col-12 wtBar">
+                                            <h3 class="pt-1 pt-md-2">WorkSpace notifications</h3>
+                                        </div>
+                                        <div class="col-12 wtHolder">
+                                            <div class="scrollDiv">
+                                                <% allFrlData.forEach(function(afd){ %>
+                                                    <% for(var i = 0 ; i < userData.ClientAcceptedReq.length ; i++ ){ %>
+                                                        <% if( userData.ClientAcceptedReq[i].pManagerID == afd.detailsOwner ){ %>
+                                                          
+                                                                        <div class="newNotfWs">
+                                                                            <div class="row mt-1">
+                                                                                <div class="col-12 col-md-2 ml-2 d-none d-md-block">
+                                                                                        <img src="<%= afd.Fimage %>" class="mt-1 mb-2"  style="border-radius: 50%" height="80px" width="80px" alt="Failed to load a image">
+                                                                                </div>
+                                                                               
+            
+                                                                                
+                                                                                <div class="col-12 col-md-9 mt-3 mt-md-1  ml-md-4 ml-1 ">
+                                                                                        <h5><b><%= afd.fname %> <%= afd.lname %></b> has evaluated your project budget to <span style="color:blue">$<%= userData.ClientAcceptedReq[i].pEvlBdg %></span> .</h5>
+                                                                                    <div class="row mt-4 mb-2">
+                                                                                        <div class="col-12 ">
+                                                                                                <form action="/workspace/client/makeprojectmanager/<%= afd.detailsOwner %>/<%= allData[''+afd.detailsOwner] %>/<%= userData.ClientAcceptedReq[i].pEvlBdg %>" method="POST">
+                                                                                                    <button type="submit" class="mkPm" style="margin-top: -10px;">Make project manager</button>
+                                                                                                </form>
+                                                                                        </div>
+                                                                                       
+                                                                                    </div>
+                                                                                  
+                                                                                </div>
+            
+                                                                                <div class="col-12 col-md-9 mt-3 mt-md-1  ml-md-4 ml-1 d-block d-md-none ">
+                                                                                        <div class="row mt-4 mb-2">
+                                                                                            <div class="col-6 col-md-6 ">
+                                                                                            </div>
+                                                                                            <div class="col-6 col-md-6">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                      
+                                                                                </div>
+            
+            
+                                                                            </div>
+                                                                                
+                                                                        </div>
+                                                                        <% } %>
+                                                                        <%}%>
+                                                                    <% }); %>
+                
+                                                                    <% if( userData.ClientAcceptedReq.length == 0 ){%>
+                                                                        <center>
+                                                                            <h5 style="margin-top: 32vh;color: grey;"><b>No new  notifications.</b></h5>
+                                                                        </center>
+                                                                    <% } %>   
+                                                           
+                                                  
+                                            </div>
+                                        </div>
+                                </div>
+                               
+                            </div>
+                            <div class="col-12 col-md-6 wsNotf">
+                                <div class="row">
+                                        <div class="col-12 wsBar">
+                                                <h3 class="pt-1 pt-md-2">WsTeam notifications</h3>
+                                        </div>
+                                        <div class="col-12 wsHolder">
+                                                <div class="scrollDiv">
+                                                    <% if(success && success.length > 0) { %>
+                                                        <div class="alert alert-primary text-center" role="alert">
+                                                                <b><%= success %></b>
+                                                        </div>
+                                                    <% } %>
+                                                </div> 
+                                            </div>
+                            
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+       
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

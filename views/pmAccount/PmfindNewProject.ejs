@@ -1,0 +1,81 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/pmAcc/PMfindNewProject.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/projectmanager" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/freelancer/accountDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+        <div class="row">
+                <div class="col-5 blueBox">
+                        <center>
+                                <h2 style="color: white;font-weight: bold;margin-top:290px" class="pl-5 pr-5 ">Send request to Clients to work on their project.</h2 style="color: white;font-weight: bold;">
+                        </center>
+                        <center>
+                                <div style="margin-top: 25px;">
+                                        <a href="/workspace/projectmanager" class="doneBtn " style="color: blue;text-decoration: none;">DONE</a>
+
+                                </div>
+                        </center>
+
+                </div>
+                <div class="col-7 p-3"> 
+                        <div class="scrollDiv">
+                                <% if(success && success.length > 0) { %>
+                                        <div class="alert alert-primary text-center" role="alert">
+                                                <b><%= success %></b>
+                                        </div>
+                                <% } %>
+                                <% pd.forEach(function(pData){ %>
+                                        <% if(pData.assignedPM == false ){ %>
+                                                        <div class="reqBox">
+                                                                <div class="row">
+                                                                        <div class="col-4">
+                                                                                <h3 style="font-weight: bold;padding-top:5px;padding-left: 10px;color:blue" ><%= pData.pName %></h3 style="font-weight: bolds;">
+                                                                                <h4 style="font-weight: bold;padding-top:5px;padding-left: 10px;color:black" >Budget : $<%= pData.pBudget %></h3 style="font-weight: bolds;">
+                                                                        </div>
+                                                                        <div class="col-5">
+                                                                                <h5 style="padding-top:10px;"><%= pData.pType %></h5>
+                                                                                <h4 style="font-weight: bold;padding-top:5px;color:black" >Duration : <%= pData.pDuration %> days</h3 style="font-weight: bolds;">
+                                                                        </div>
+                                                                        <div class="col-3">
+                                                                                <div style="margin-top:33px;margin-left:6px">
+                                                                                        <a href="/workspace/notifications/evaluate/<%= pData._id %>/<%= pData.pClientID %>" style="color:white;text-decoration: none;" class="reqBtn">EVALUATE</a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                
+
+                                        <% } %>
+                                <% }); %>
+                        </div>    
+                </div>
+        </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

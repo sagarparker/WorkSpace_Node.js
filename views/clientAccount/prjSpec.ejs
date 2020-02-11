@@ -1,0 +1,93 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/clientAcc/prjSpec.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-2"><a href="/workspace/client/project/<%= pd._id %>/<%= pd.pName %>" style="text-decoration: none !important;font-weight: bold;color: blue">Project home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/projectmanager" style="text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/client/accDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-5 blueDiv pl-4 pr-5">
+            <h3 style="margin-top: 77px;margin-left:30px"><b>Project specifications</b></h3>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <h4><b>Project name</b></h4>
+                    <h4><%= pd.pName %></h4>
+                </div>
+                <div class="col-6">
+                    <h4><b>Project category</b></h4>
+                    <h4><%= pd.pType %></h4> 
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <h4><b>Duration</b></h4>
+                    <h4><%= pd.pDuration %> days</h4>
+                </div>
+                <div class="col-6">
+                    <h4><b>Deadline</b></h4>
+                    <h4><%= pd.pDeadline  %></h4>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <h4><b>Budget limit</b></h4>
+                    <h4>$<%= pd.pBudget %></h4>
+                </div>
+                <div class="col-6">
+                    <h4><b>Budget criteria</b></h4>
+                    <h5><%= pd.pBudgetCriteria  %></h5>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4><b>Project description</b></h4>
+                    <h5><%= pd.pDescription%></h5>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-7 pl-5 pr-5">
+            <div class="row">
+                <div class="col-12 scrollDivHolder">
+                    <div class="scrollDiv">
+                        <ul class="pt-1">
+                            <% pd.projSpec.forEach(function(pData){ %>
+                                <li class="pt-2"><h5><%= pData.spec %></h5></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                       
+        </div>
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

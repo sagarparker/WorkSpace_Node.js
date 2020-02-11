@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/x-icon" href="/Images/landingPage_images/projectlogo.png"/>
+        <title>WorkSpace</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+     
+        
+    <!-- ANIMATE CSS LINK -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    
+    <!-- DEFAULT CSS -->
+
+    <link rel="stylesheet" href="/CSS/pageDefault.css">
+    
+    
+    <!-- BOOTSTRAP CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- BOOTSTRAP JQUERY,JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/loadingAni.css">
+    <link rel="stylesheet" href="/CSS/finalTeam.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/JS/loadingAni.js"></script>
+    <script src="/JS/defaultPage.js"></script>
+    
+</head>
+<div class="loader">
+        <i class="fas fa-sync-alt fa-3x fa-spin"></i>
+</div>
+
+<body>
+
+
+<nav class="navbar  navbar-dark  navbar-expand-sm fixed-top" id="navani">
+
+            <div class="navbar-header" style="color:white" >
+                    <img src="/Images/landingPage_images/projectlogo.svg" alt="logo" width="40px" height="40px" style="padding-right:0px;padding-bottom: 4px">
+                    <div class="navbar-brand">WorkSpace</div>
+                    
+            </div>
+                
+                
+</nav>
+
+<div class="container-fluid mainDiv">
+    <div class="row  pt-5 ">
+        <div class="col-12 pt-5  text-center">
+            <a href="/workspace/loginsignup/signUpEnd/<%= wsFinalTeam.teamAdmin %>" style="text-decoration: none;color:white" class="nextBtn">FINISH AND LOGIN TO YOUR ACCOUNT</a>
+        </div>
+        <div class="col-12 pt-5 mt-4 text-center d-none">
+            <a href="#" style="text-decoration: none;color:white;" class="errorMsg">Please add a projet manager to your team</a>
+        </div>
+    </div>
+
+    <div class="row mt-5 ">
+        <div class="col-12 text-center">
+                <h3 class="text-center"><span style="color: blue;font-weight:bold"><%= wsFinalTeam.teamName %></span> team members</h3>
+        </div>
+    </div>
+
+    <div class="row   d-flex flex-row justify-content-center cardHolder">
+    <% allFreelancerDetl.forEach(function(frlDetl){ %>
+    <% for(var i = 0; i < wsFinalTeam.frlRequest.length; i++ ){%>
+        <% if(wsFinalTeam.frlRequest[i].frlID == frlDetl.detailsOwner){%>
+            <div class="col-12 col-md-2 frlCardHolder p-3 mb-2">
+                <div class="frlCard p-2">
+                    <img style="border-radius: 50%" src="<%= frlDetl.Fimage %>" alt="Failed to load" height="115px" width="115px">
+                   <% if(wsFinalTeam.teamAdmin == frlDetl.detailsOwner){ %>
+                        <h4 style="color: black;font-weight: bold;text-align: center" class="mt-3"><%= frlDetl.fname%> <%= frlDetl.lname %><br><span style="color: blue">(Team leader)</span></h4>
+                
+                   <%} else{ %>
+                        <h4 style="color: black" class="mt-3 text-center"><b><%= frlDetl.fname%> <%= frlDetl.lname %></b></h4>
+                   <% } %>
+                    
+                    <h6 class="text-center mt-4 "><%= frlDetl.designation %></h6>
+              
+                    <% if(wsFinalTeam.teamAdmin == frlDetl.detailsOwner){ %>
+                
+                        <%} else{ %>
+                         <form action="/workspace/freelancer/reqst/<%= wsFinalTeam._id %>/<%= frlDetl.detailsOwner %>" method="POST" class="mt-3">
+                             <input type="submit" class="delBtn" value="Remove">    
+                         </form>
+                        <% } %>
+                </div>
+           
+            </div>
+        <%}%>
+    <% } %>
+    <% }); %>
+        </div>
+    </div>
+
+
+<!-- FOOTER -->
+
+<% include partials/footer %>
+
+
+                          
+    
+</body>
+</html>

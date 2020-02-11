@@ -1,0 +1,207 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/freelancer/teamchat.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<style>
+
+p{
+  margin-top:-6.2vh;
+}
+
+</style>
+
+<% include ../partials/headerTwo %>
+
+<div class="menuHide d-none d-md-block">
+  <div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+    <div class="menuLink" style="font-weight: bolder;text-align: left">
+        <h3 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h3>
+        <% if(usrData.wsuser == "freelancer"){%>
+          <h3 class="mt-3"><a href="/workspace/freelancer" style="text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+        <% } %>
+
+        <% if(usrData.wsuser == "client"){%>
+          <h3 class="mt-3"><a href="/workspace/client" style="text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+        <% } %>
+
+        <% if(usrData.wsuser == "Project manager"){%>
+          <h3 class="mt-3"><a href="/workspace/projectmanager" style="text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+        <% } %>
+    
+    </div>
+</div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+<img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-3 d-none d-md-block">
+        <div class="infoDiv">
+          <center><h3 style="margin-top: 160px;"><b>WorkSpace chat</b></h3></center>
+          <center>
+           
+           <img style="margin-top:-30px;margin-left: -30px;" src="/Images/chatImg/chat.svg" alt="" height="420px" width="370px">
+
+          </center>
+          <h4 id="team"></h4>
+        </div>
+      </div>
+      
+      <div class="col-12 col-md-9 chatBoxHolder">
+        <div class="chatBox">
+          <div class="scrollDivHolder">
+            <div class="scrollDiv" id="scrollDiv">
+              <div class="msgHolder">
+               
+                  <ul id="messages" class="pt-2"></ul>
+
+              </div>
+                
+            </div>
+          </div>
+          <div class="formDiv">
+              <form action="">
+                  <input id="m" autocomplete="off" required/><button id="sendMsg">Send</button>
+              </form>
+          </div>
+          
+        </div>
+         
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+<!-- FOOTER -->
+
+<footer style="background:rgb(41, 39, 39)">
+
+  
+    <div class="container">
+  
+      
+      <div class="row d-flex justify-content-center pl-0 pl-sm-4">
+  
+        
+        <div class="pt-2 ">
+          <div class="mb-2 " id="footeric">
+  
+            <!-- Facebook -->
+            <a class="fb-ic" href="https://facebook.com" style="color:white;text-decoration: none ">
+              <i class="fab fa-facebook-f fa-xs white-text mr-md-5 mr-3 fa-2x text-center"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic" href="https://twitter.com" style="color:white;text-decoration: none ">
+              <i class="fab fa-twitter fa-xs white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic" href="https://google.com" style="color:white;text-decoration: none ">
+              <i class="fab fa-google-plus-g fa-xs white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic" href="https://linkedin.com" style="color:white;text-decoration: none ">
+              <i class="fab fa-linkedin-in fa-xs white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            
+           
+            
+            
+          </div>
+        </div>
+        
+  
+      </div>
+   
+  
+    </div>
+    
+  
+  
+    <div class="text-center  py-5 pr-0 pr-sm-4" style="color:white;background-color: black">© 2019 Copyright:
+      <a style="color: rgb(57, 57, 235)"> WorkSpace.com</a>
+    </div>
+  
+  
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+    <script>
+     $(function () {
+      var socket = io();
+
+      $("input").focus(function(){
+        
+        socket.emit('teamName',"<%= teamNa %>");
+      
+      });
+
+      $('form').submit(function(e){
+        e.preventDefault(); // prevents page reloading
+        var msgDate = moment().format('h:mm a, MMM Do YYYY'); 
+        socket.emit('uname',"<%= uname %>");
+        socket.emit('chat message',$('#m').val());
+        socket.emit('uDate',msgDate);
+        $('#m').val('');
+        return false;
+   
+       
+      });
+
+
+     
+      socket.on('uname',function(un){
+        $('#messages').append($('<h6  style="color:blue">').text(un));
+      });
+
+      socket.on('uDate',function(un){
+        $('#messages').append($('<p class="d-none d-md-block"  style="color:blue;padding-left:51vw">').text(un));
+      });
+
+      socket.on('chat message', function(msg){
+        $('#messages').append($('<h5><li>').text(msg));
+        $(".scrollDiv").scrollTop($(".scrollDiv")[0].scrollHeight);  
+      });
+
+      socket.on('load old msgs',function(docs){
+        for(var i= 0;i <= docs.length-1 ;i++ ){
+          $('#messages').append($('<h6  style="color:blue">').text(docs[i].uname));
+          $('#messages').append($('<p class="d-none d-md-block" style="color:blue;padding-left:51vw;">').text(docs[i].msgTime));
+          $('#messages').append($('<h5><li>').text(docs[i].msg));
+          $(".scrollDiv").scrollTop($(".scrollDiv")[0].scrollHeight);  
+        }
+      });
+
+    });
+
+  
+
+    </script>
+    
+</body>
+</html>                    
+    
+
+

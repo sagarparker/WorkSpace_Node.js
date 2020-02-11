@@ -1,0 +1,40 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.blueBox{
+    height: 100vh;
+    background-color: rgb(53, 53, 255);
+}
+
+.whiteBox{
+    height: 100vh;
+}
+
+.Rtitle{
+    color:blue;
+    font-weight:bold;
+}
+
+@media screen and (max-width:600px){
+
+    .mainDiv{
+        height: 230vh;
+    }
+    
+    .blueBox{
+        height: 105vh;
+        background-color: rgb(53, 53, 255);
+    }
+
+    .whiteBox{
+        height: 135vh;
+    }
+    
+    .Rtitle{
+        color:blue;
+        font-weight:bold;
+    }
+    
+
+}

@@ -1,0 +1,98 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.teamInfo{
+    background-image: linear-gradient(to bottom,blue,rgb(0, 195, 255));
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.joinTeam{
+    padding: 10px 20px 10px 20px;
+    background-color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    border:none;
+    font-size: 1.3em;
+    transition: all 0.2s ease;
+}
+
+.joinTeam:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+.teamMembersHolder{
+    height: 86.5vh;
+}
+
+.scrollDiv{
+    height: 86.5vh;
+    overflow-y:scroll;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.teamMembersContainer{
+    height: 17vh;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px rgb(180, 180, 180);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+ /* Track */
+ ::-webkit-scrollbar-track {
+    border:2px solid rgb(209, 204, 204);
+    border-radius: 10px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:blue; 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(4, 4, 207); 
+  }
+
+
+
+  @media screen and (max-width:600px){
+    .mainDiv{
+        height:200vh;
+    }
+
+    .teamMembersContainer{
+        height: 45vh;
+   
+    }
+
+    .toCenter{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .centerH4{
+        text-align: center;
+    }
+
+  }

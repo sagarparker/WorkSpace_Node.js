@@ -1,0 +1,91 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.dashboard{
+    height: 100vh;
+}
+
+.projDiv{
+    height: 100vh;
+    background-color: rgb(241, 241, 241);
+}
+
+.progHolder{
+    height: 20vh;
+    background-color: white;
+    margin-top:70px;
+    border-radius: 10px;
+}
+
+.projectStatus{
+    height: 64vh;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.projCont{
+    height: 86.2vh;
+    margin-top:70px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.chkNtf{
+    background-color: blue;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    border:none;
+    
+}
+
+.assignWork{
+    height: 40vh;
+    background-color: rgb(248, 247, 247);
+    border-radius: 10px;
+}
+
+.ptask{
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.scrollDiv{
+    overflow-y: scroll;
+    height: 52vh;
+    position: relative;
+}
+
+.fadedScroller_fade {
+    content:'';
+    margin-top:-30px;
+    height: 30px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 50%, rgba(251, 251, 251, 0) 100%);
+    position: relative;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(221, 221, 221); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }

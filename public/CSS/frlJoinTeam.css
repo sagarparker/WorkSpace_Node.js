@@ -1,0 +1,106 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.wsTeamHolder{
+    height: 85vh;
+}
+
+.scrollDiv{
+    height: 85vh;
+    overflow-y: scroll;
+    padding: 12px;
+    z-index: -1;
+}
+
+.wsTeam{
+  height: 20vh;
+  margin-right: 20px;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0px 0px 7px rgb(179, 179, 179);
+}
+
+.infoBtn{
+  background-color: blue;
+  padding: 13px 20px 13px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.2s ease-in;
+}
+
+.infoBtn:hover{
+  box-shadow: 0px 0px 7px gray;
+}
+
+.btnHolder{
+  padding-top: 30px;
+  padding-left: 50px;
+}
+
+.infoCont{
+  background-image: linear-gradient(to bottom,blue ,cyan );
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.finishBtn{
+  color: black;
+  background-color: white;
+  padding: 15px 25px 15px 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+  
+}
+
+.finishBtn:hover{
+  box-shadow: 0px 0px 7px black;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+ /* Track */
+ ::-webkit-scrollbar-track {
+    border:2px solid rgb(209, 204, 204);
+    border-radius: 10px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:blue; 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(4, 4, 207); 
+  }
+
+  @media screen and (max-width:600px){
+    .mainDiv{
+      height: 200vh;
+    }
+
+    .wsTeam{
+      height: 50vh;
+      text-align: center;
+    }
+
+    .infoBtn{
+      margin-left: -35px;
+    }
+  }

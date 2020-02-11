@@ -1,0 +1,108 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.blueCard{
+    height: 68vh;
+    border-radius: 10px 0px 0px 10px;
+    background-color: blue;
+    box-shadow: 0px 0px 7px gainsboro;
+}
+
+.taskCard{
+    height: 68vh;
+    border-radius: 0px 10px 10px 0px;
+    margin-bottom: 30px;
+    background-color: rgb(252, 252, 252);
+    box-shadow: 0px 0px 7px gainsboro;
+}
+
+.tasks{
+    height: 49vh;
+    width: 100%;
+}
+
+.inp{
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid rgb(172, 172, 172);
+}
+
+.subBtn{
+    padding: 10px 40px 10px 40px;
+    background-color: blue;
+    font-weight: bold;
+    color:white;
+    border:none;
+    border-radius: 10px;
+}
+
+
+.scrollDiv{
+    height: 72vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollDiv::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollDiv::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }
+
+  
+
+  .scrollDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+
+.scrollBox{
+    height: 70%;
+    overflow-y: auto;
+}
+
+.scrollBox::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.scrollBox::-webkit-scrollbar-track {
+    border:2px solid rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  /* Handle */
+.scrollBox::-webkit-scrollbar-thumb {
+    background:rgb(204, 204, 204); 
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+  
+  /* Handle on hover */
+  .scrollBox::-webkit-scrollbar-thumb:hover {
+    background: rgb(175, 175, 175); 
+  }
+
+  

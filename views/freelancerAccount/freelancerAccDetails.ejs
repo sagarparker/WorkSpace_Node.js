@@ -1,0 +1,169 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+<link rel="stylesheet" href="/CSS/freelancer/freelancerAccountDetails.css">
+<script src="/JS/freelancerHome/menuBar.js"></script>
+<% include ../partials/headerTwo %>
+
+<!-- /////START HERE///// -->
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+        <div class="menuLink" style="font-weight: bolder;text-align: left">
+            <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+            <% if(frlDet.designation == "Project manager"){ %>
+                <h3 class="mt-3"><a href="/workspace/projectmanager" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+            <% }else{ %>
+                <h3 class="mt-3"><a href="/workspace/freelancer" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+            <% } %>
+            
+            <h3 class="mt-5"><a href="/workspace/freelancer/accountDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+            
+        </div>
+</div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<div class="mainDiv">
+
+<div class="container-fluid ">
+<div class="row">
+    <div class="col-12 col-md-3 userInfoCard">
+        <center>
+                <img src="<%= frlDet.Fimage%>" class="userImage"  alt="Failed to laod image" width="250px" height="250px" style="border-radius: 50%">
+        </center>
+        <center>
+                <h3 class="mt-3"><b><%=frlDet.fname%> <%=frlDet.lname%></b></h3>
+        </center>
+        
+        <center><h5 style="color: blue" class="mt-1"><b><%= frlDet.designation%></b></h5></center>
+
+    
+
+        
+            <img src="/Images/Freelancer_images/Faccount/poll-h-solid.svg" alt="" width="30px" height="30px" class="mt-4" style="margin-left:-85px">
+            <a href="/workspace/freelancer/resume" style="text-decoration: none;color:blue;font-size:1.5em;font-weight: bold;margin-left:40px;margin-top:-34px" >Resume</a>
+        
+            <center>
+                    <i class="fas fa-angle-double-down d-block d-sm-none fa-lg " style="margin-top: 50px;"></i>
+            </center>
+    </div>
+
+    <div class="col-12 col-md-9 userDetails">
+       <div class="contHolder">
+           <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-12 col-md-5 p-3">
+                        <div class="usrDtl p-2 p-md-0">
+                            <center>
+                                    <h3 style="color: blue"><b>USER DETAILS</b></h3>
+                            </center>
+
+                            <table>
+                                <tr>
+                                    <td style="color: blue">FIRST NAME </td>
+                                    <td>:  <%= frlDet.fname %></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="color: blue">LAST NAME </td>
+                                    <td>:  <%= frlDet.lname %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="color: blue">AGE </td>
+                                    <td>:  <%= frlDet.age %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="color: blue">DESIGNATION </td>
+                                    <td class="desg">:  <%= frlDet.designation %></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="color: blue">EDUCATION</td>
+                                    <td>:  <%= frlDet.education %></td>
+                                </tr>
+
+                            </table>
+
+                            <center>
+                                <h5 class="mt-5" style="color: blue"><b>JOINED WORKSPACE ON</b></h5>
+                            </center>
+
+                            <center>
+                                <h5><b><%= frlDet.FacCdate%></b></h5>
+                            </center>
+                           
+                        </div>
+                    </div>
+
+                    <div class="col-2"></div>
+
+                    <div class="col-12 col-md-5 p-3">
+                        <div class="memDtl ">
+                            <center>
+                                <h3 class="memHead" style="color: blue"><b>MEMBERSHIP DETAILS</b></h3>
+                            </center>
+
+                            <center>
+                                <h3 class="mt-4" ><b><%= frlDet.FmembershipType || "Project manager"%></b></h3>
+                            </center>
+
+                            
+                            <% if(frlDet.designation != "Project manager") {%>
+
+                            <center>
+                                <h5 style="color: blue" class="mt-4"><b>SUBSCRIPTION DATE</b></h5>
+                            </center>
+                            <center>
+                                <h5><b><%= frlDet.FSubDate || "NULL" %></b></h5>
+                            </center>
+
+                            <center>
+                                    <h5 style="color: blue" class="mt-4"><b>SUBSCRIPTION DURATION</b></h5>
+                            </center>
+                            <center>
+                                <h5><b><%= frlDet.FSubDuration || "Unlimited"%></b></h5>
+                            </center>
+
+                            <center>
+                                    <h5 style="color: blue" class="mt-4"><b>SUBSCRIPTION ENDS ON</b></h5>
+                            </center>
+                            <center>
+                                <h5><b><%= frlDet.FSubExpiry || "None"%></b></h5>
+                            </center>
+
+                            <center>
+                                <div class="mt-5">
+                                        <a href="/workspace/fMembership" class="subChange" style="text-decoration: none;color:white"><b>CHANGE PLAN</b></a>
+                                </div>
+                            </center>
+                            <% }else{ %>
+                            <center>
+                                    <h5 class="mt-2">Free lifetime subscription for <br> project managers.</h5>
+                            </center>
+                          
+                            <%}%>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

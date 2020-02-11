@@ -1,0 +1,83 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/prjPages/wsTeamDetails.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-2"><a href="javascript:history.back()" style="text-decoration: none !important;font-weight: bold;color: blue">Go back</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/<%= utype %>" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+    <div class="row">
+        <div class="col-4 blueDiv">
+            <center>
+                <i class="fas fa-users fa-4x" style="margin-top:260px;color:white"></i>
+            </center>
+            <center>
+                <h3 class="mt-1" style="color:white"><b><%= teamData.teamName %></b></h3>
+            </center>
+            <center>
+                <h5 class="mt-1" style="color:gainsboro"><b><%= teamData.teamCategory %></b></h5>
+            </center>
+        </div>
+        <div class="col-8 scrollDivHolder">
+            
+                <div>
+                    <center>
+                        <img src="<%= pmData.Fimage%>" alt="" height="150px" width="150px" style="border-radius: 50%;margin-top:100px">
+                    </center>
+                    <center>
+                        <h4 class="pt-2"><b> <%= pmData.fname %> <%= pmData.lname %> </b></h4>
+                        <h5><%= pmData.designation %></h5>
+                    </center>
+                </div>
+                <div class="scrollDiv">
+                    <div class="row mt-5 ">
+                        <% fdtls.forEach(function(fd){ %>
+                            <% for(var i = 0; i < pData.memberList.length ;i++ ){ %>
+                                <% if(fd.detailsOwner == pData.memberList[i].usrID && fd.designation != "Project manager"){ %>
+                                    <div class="col-4 pt-2">
+                                        <center>
+                                            <img src="<%=fd.Fimage %> " alt="" height="120px" width="120px" style="border-radius: 50%;">
+                                        </center>
+                                        <center>
+                                            <h4 class="pt-2"><b> <%= fd.fname %> <%= fd.lname %> </b></h4>
+                                            <h5><%= fd.designation %></h5>
+                                        </center>
+
+                                    </div>
+                                <% } %>
+                            <% }  %>
+                        <% }) %>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>

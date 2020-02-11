@@ -1,0 +1,126 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.userInfoCard{
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.userDetails{
+    background-image: url(/Images/Freelancer_images/Fhome_images/fhome.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+   
+}
+
+.contHolder{
+    height: 86vh;
+    background-color: white;
+    margin-top: 12vh;
+    border-radius: 15px;
+}
+
+.usrDtl{
+    height: 81vh;
+    background-color: rgb(242, 242, 242);
+    border-radius: 15px;
+    margin-right: -6vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+tr td{
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.memDtl{
+    height: 81vh;
+    background-color: rgb(242, 242, 242);
+    border-radius: 15px;
+    margin-left: -6vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subChange{
+    background-color: blue;
+    padding: 12px;
+    border-radius: 30px;
+}
+
+.desg{
+    font-size: 1.1em;
+}
+
+.memHead{
+    font-size: 1.77em;
+}
+
+.userImage{
+    margin-top:50px;
+}
+
+
+@media screen and (max-width:700px){
+    .mainDiv{
+        height: 290vh;
+    }
+
+    .userDetails{
+        background-image: url(/Images/Freelancer_images/Fhome_images/fhome.png);
+        background-size: cover;
+        background-position: center;
+        height: 190vh;
+       
+    }
+    .contHolder{
+        height: 172vh;
+    }
+
+    .usrDtl{
+        height: 81vh;
+        background-color: rgb(242, 242, 242);
+        border-radius: 15px;
+        margin-right: 0vw;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .memDtl{
+        height: 81vh;
+        background-color: rgb(242, 242, 242);
+        border-radius: 15px;
+        margin-left: 0vw;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .desg{
+        font-size: 0.8em;
+    }
+
+    .memHead{
+        font-size: 1.6em;
+    }
+
+    .userImage{
+        margin-top:95px;
+    }
+
+}
+

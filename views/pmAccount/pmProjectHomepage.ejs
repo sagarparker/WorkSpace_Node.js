@@ -1,0 +1,320 @@
+
+<!-- HEADER -->
+
+<% include ../partials/headerOne %>
+<!--INSERT SCRIPTS AND STYLESHEETS BELOW-->
+
+<link rel="stylesheet" href="/CSS/pmAcc/pmPrjHomepage.css">
+
+<script src="/JS/freelancerHome/menuBar.js"></script>
+
+<style>
+        .reviewBlock{
+            height: 80px;
+            width: 100%;
+            border-radius: 10px;
+            background-color: rgb(235, 235, 235);
+            padding: 7px;
+            margin-bottom: 10px;
+            overflow-y: hidden;
+        }
+
+</style>
+
+<% include ../partials/headerTwo %>
+
+<div class="menu" style="background-color: rgb(240, 240, 240)">
+      
+    
+                <div class="menuLink" style="font-weight: bolder;text-align: left">
+                    <h4 style="padding-left: 40px;margin-top:80px;padding-bottom:90px">Menu</h4>
+                    <h3 class="mt-3"><a href="/workspace/projectmanager" style="   text-decoration: none !important;font-weight: bold;color: blue">Home</a></h3>
+                    <h3 class="mt-5"><a href="/workspace/freelancer/accountDetails" style="   text-decoration: none !important;font-weight: bold;color: blue">Account</a></h3>
+                    
+                </div>
+        </div>
+
+<div class="barHolder" style="position: absolute;margin-top: 75px;margin-left: 15px;z-index: 2;">
+        <img src="/Images/Freelancer_images/Fhome_images/bars-solidB.svg" alt="" width="37px" height="37px">
+</div>
+
+<!-- START HERE -->
+
+<div class="mainDiv container-fluid">
+        <div class="row">
+                <div class="dashboard col-3">
+                        <center>
+                                <h1 style="display: inline-block;margin-top: 27vh;color: blue;"><b><%= prjData.pName %></b></h1>
+                                
+                        </center>
+                       
+                        <center>
+                                <h5><%= prjData.pType%></h5>
+                        </center>
+
+                        
+                        <% if( prjData.assignedPM == true){ %>
+                                <center>
+                                        <a href="/workspace/project/PrjclientDetails/<%= prjData.pClientID %>/projectmanager"  style="font-size: 22px;color: black;text-decoration: none;"><i class="fas fa-user-tie mt-5 pt-3  pr-2" style="font-size: 30px;color: blue;"></i>WorkSpace client </a>
+                                </center>
+                        <% } %>
+
+                        <% if( prjData.assignedWsTeam == true){ %>   
+                                <center> 
+                                        <a href="/workspace/project/wsTeamDetails/<%= prjData._id %>/projectmanager"  style="font-size: 22px;color: black;text-decoration: none;" class="pl-1"><i class="fas fa-users  pt-5 pr-1" style="font-size: 30px;color: blue;"></i> WorkSpace team </a>
+                                </center>
+                        <% } %>
+                        
+                      
+
+                        <center>
+                                <a href="/workspace/project/prjDetails/<%= prjData._id %>/projectmanager"  style="font-size: 22px;color: black;text-decoration: none;" class="pl-1"><i class="fas fa-info-circle  pt-5 pr-1" style="font-size: 30px;color: blue;"></i> WsProject Details </a>
+                        </center>
+                </div>
+
+                <div class="projDiv col-9 ">
+                        <div class="row pl-2">
+                                       
+                                <div class="col-7">
+                                        <div class="row">
+                                                <div class="col-12">
+                                                        <div class="progHolder p-2">
+                                                                        <h4 class="pt-2"><b>Project progress : <span style="color: blue;"><%= prjData.prjProgress %>%</span> <span style="font-weight: 100;font-size: 0.7em; margin-left: 100px;color:gray" >Deadline : <%= prjData.pDeadline %></span></b></h4>
+                                                                        <hr style="height: 12px;margin-top: 35px;border-radius: 10px;background-color: gainsboro;" >
+                                                                        <hr style="height: 12px;margin-top:-29px;border-radius: 10px;background-color: rgba(0, 0, 255,1);" align="left" width="<%= prjData.prjProgress %>%"> 
+                                                                  
+                                                        </div>
+                                                             
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                                                
+                                                        
+                                                                                <% if( prjData.assignedPM == false && prjData.assignedWsTeam == false ){ %>
+                                                                                        <div class="projectStatus  pt-3">
+                                                                                                
+                                                                                        <center>
+                                                                                                <h3 class="mt-5 pt-5 mb-4" style="font-weight: bold;">Please select a project manager </br> for your project.</h3>
+                                                                                        </center>
+                                                                                        <center>
+                                                                                                <a href="/workspace/client/notifications" class=" chkNtf" style="color: white;font-weight: bold;text-decoration: none;"> Check notifications </a>
+                                                                                        </center>
+                                                                                                        
+                                                                                                        
+                                                                                        </div>
+                                                                                
+        
+                                                                                <% } if( prjData.acptListPM == false && (prjData.assignedPM == true && prjData.assignedWsTeam == false) ){ %>
+                                                                                        <div class="projectStatus p-5">
+                                                                                                
+                                                                                        <center>
+                                                                                                <h3 class="mt-5 pt-4 mb-4" style="font-weight: bold;">Please create a list of WorkSpace <br> team  for the <%= pname %> project and wait for the responses.</h3>
+                                                                                        </center>
+                                                                                        <center>
+                                                                                                <a href="/workspace/pm/project/wsteamReq/<%= pid %>/<%= pname %>" class="chkNtf" style="color: white;font-weight: bold;text-decoration: none;">Search for Ws teams</a>
+                                                                                        
+                                                                                        <% if(prjData.assignedWsTeam == false && prjData.acptTeamReq.length > 0 ){%>
+
+                                                                                                <a href="/workspace/projectmanager/acptList/<%= pid %>/<%= pname %>" style="font-weight: bold;color:white;text-decoration: none;" class="chkNtf ml-2">Accepted requests list</a>
+                                                                                                
+                                                                                        <%}%>  
+                                                                                        </center>         
+                                                                                                        
+                                                                                        </div>
+                                   
+                                                                                
+
+                                                                                <% } %>
+
+                                                                                <% if( prjData.acptListPM == true && (prjData.assignedPM == true && prjData.assignedWsTeam == false) ){ %>
+                                                                                        <div class="projectStatus p-5">
+                                                                                                
+                                                                                                <center>
+                                                                                                        <h3 style="font-weight: bold;" class="mt-5 pt-5">Wait for the client to select a team from your list.</h3>
+                                                                                                </center>
+                                                                                                        
+                                                                                        </div>
+                                   
+                                                                                
+                                                                                <% } %>
+
+
+
+        
+                                                                                <% if( prjData.assignedPM == true && (prjData.assignedWsTeam == true && prjData.prjPayment == false ) ){ %>
+                                                                                        <div class="projectStatus pt-3">
+                                                                                                        <center>
+                                                                                                                <h3 style="margin-top:150px;padding-left: 100px;padding-right: 100px;" ><b>Wait for the client to make project payment.</b></h3>
+                                                                                                        </center>
+                                                                                        </div>
+                                                                                <% } %>
+
+                                                                                <% if( (prjData.assignedPM == true && prjData.prjProgress != 100 ) && (prjData.assignedWsTeam == true && prjData.prjPayment == true ) ){ %>
+                                                                                        <div class="projectStatus pt-3 pr-3">
+                                                                                                <h4 class="pl-3 pb-2"><b>Today's tasks:</b></h4>
+                                                                                                <div class="scrollDiv pl-3 pr-3 pb-3" style="font-size: 1.25em;">
+                                                                                                                <% if(prjData.projectTasks.length > 0){ %>
+                                                                                                                        <% prjData.projectTasks.forEach(function(pd){  %>
+                                                                                                                                <% if(tDate == pd.tskDay){ %>
+                                                                                                                                        <p class="mb-3 ptask">
+                                                                                                                                                <% if(pd.tskDone == true){ %>
+                                                                                                                                                        <i class="fas fa-1x fa-check-circle pr-1" style="color:blue"></i>
+                                                                                                                                                <% }else{ %>
+                                                                                                                                                        <i class="fas fa-1x fa-check-circle pr-1" style="color:black"></i>
+                                                                                                                                                <% } %>
+                                                                                                                                                <span style="color:blue;font-weight: bold;"><%= pd.frlTask %></span> - <span ><%= pd.frlName%></span>
+                                                                                                                                        </p>
+                                                                                                                                        
+                                                                                                                                <% } %>
+                                                                                                                        <% }); %>
+                                                                                                                <% }else{ %>
+                                                                                                                        <center>
+                                                                                                                                <h4 style="font-weight: bold;color:gray;margin-top:90px"> No tasks found </h4>
+                                                                                                                                <hr width="65%">
+                                                                                                                                <h5 style="font-weight: bold;color: gray;">Please contact your project manager</h5>
+                                                                                                                        </center>
+                                                                                                                <% } %>
+                                                                                        
+                                                                                                
+                                                                                                </div>   
+                                                                                                <div class="fadedScroller_fade"></div>                                                     
+                                                                                        </div>
+                                                                                <% } %>
+                                                                                <% if(prjData.prjProgress == 100 && prjData.pActive == true){ %>
+                                                                                        
+                                                                                        <div class="projectStatus pt-3 pr-3">
+                                                
+                                                                                             
+                                                                                                                
+                                                                                                                          
+                                                                                                        
+                                                                                               
+                                                                                                <center>
+                                                                                                        <img style="margin-top: -30px;" src="/Images/projectImages/pjdone.svg" alt="" width="400px" height="350px">
+                                                                                                </center>
+
+                                                                                                <center>
+                                                                                                        <form action="/workspace/projectmanager/done/<%= prjData._id %>/<%= prjData.pName %>" method="POST">
+                                                                                                                <button type="submit" class="mkPrjDone">MARK PROJECT COMPLETED</button> 
+                                                                                                        </form>
+                                                                                                </center>
+                                                                                                
+                                                                                        </div>
+                                                                                <% } %>
+                                                                                <% if(prjData.prjProgress == 100 && prjData.pActive == false ){ %>
+                                                                                        
+                                                                                        <div class="projectStatus pt-3 pr-3">
+                                                                                                <% if(prjData.PrjReviews){ %>
+                                                                                                        
+                                                                                                        <h5 style="color: blue;" class="pl-3"><b><span style="font-size: 1.3em;color:black">Reviews : </span>Project completed</b></h5>
+                                                                                                        
+                                                                                                        <div class="scrollDiv"  style="height: 287px;margin-bottom: 10px;padding: 12px;padding-left: 16px;padding-top: 17px;">
+                                                                                                        <% prjData.PrjReviews.forEach(function(pd){ %>
+                                                                                                                <div class="reviewBlock">
+                                                                                                                        <p style="font-weight: bold;font-size: 1.2em;color:blue"><%= pd.name %> - 
+                                                                                                                        <% for( var i = 0 ; i < pd.stars ; i++){ %>
+                                                                                                                                <i class="fas fa-star" ></i>
+                                                                                                                        <% } %>
+                                                                                                                        
+                                                                                                                        </p>
+                                                                                                                        <p style="margin-top: -5px;"><%= pd.revTxt %></p>
+                                                                                                                </div>
+                                                                                                        <% }); %>
+                                                                                                                
+                                                                                                        </div>
+                        
+                                                                                                        
+                                                                                                        <a class="ml-3" href="/workspace/project/review/<%= prjData._id %>/<%= prjData.pName %>/<%= usrData.fname %> <%= usrData.lname %>/projectmanager"  style="background-color: blue;color: white;padding: 10px 20px 10px 20px;border-radius: 10px;font-weight: bold;text-decoration: none;">Give a review to this project</a>
+                                                                                                        
+                        
+                                                                                                <%}else{ %>
+                        
+                                                                                                        <center>
+                                                                                                                <h3 style="color: blue;" class="pt-1"><b>Project completed</b></h3>
+                                                                                                        </center>
+                                        
+                                                                                                        <center>
+                                                                                                                <img style="margin-top: -25px;" src="/Images/projectImages/pjdone.svg" alt="" width="400px" height="320px">
+                                                                                                        </center>
+                                                                                                        <center>
+                                                                                                                <a href="/workspace/project/review/<%= prjData._id %>/<%= prjData.pName %>/<%= usrData.fname %> <%= usrData.lname %>/freelancer"  style="background-color: blue;color: white;padding: 10px 20px 10px 20px;border-radius: 10px;font-weight: bold;text-decoration: none;">Give a review to this project</a>
+                                                                                                        </center>
+                        
+                                                                                                <% } %>
+                                                                                        </div>
+                                                                                <% } %>
+                                     
+                                                                
+                                                </div>
+                                        </div>
+                                                                             
+                                </div>
+                                <div class="col-5">
+                                                <div class="projCont">
+
+                                                        <div class="row">
+                                                                <div class="col-1">
+
+                                                                </div>
+                                                                        <div class="col-10 assignWork mt-3 mb-5">
+                                                                                <h4 class="mt-3 ml-2 mb-5"><b>Ws-Dashboard</b></h4>
+
+                                                                                <% if(prjData.pActive){ %>
+                                                                                        <a href="/workspace/projectmanager/updateproject/<%= prjData._id %>" style="padding: 10px 85px 10px 85px;background-color: blue;font-weight: bold;font-size:1.2em;color:white;border-radius:10px;text-decoration:none" class="ml-2 ">Update project</a><br><br><br>
+                                                                                        <a href="/workspace/projectmanager/assigntasks/<%= prjData._id %>" style="padding: 10px 97px 10px 97px;background-color: blue;font-weight: bold;font-size:1.2em;color:white;border-radius:10px;text-decoration:none" class="ml-2 ">Assign tasks</a>        
+                                                                                <% }else{ %>
+                                                                                        <a href="/workspace/project/client/review/<%= prjData.pClientID %>/<%= prjData._id %>/<%= prjData.pName %>/<%= usrData.fname %> <%= usrData.lname %>/projectmanager" style="padding: 10px 92px 10px 92px;background-color: blue;font-weight: bold;font-size:1.2em;color:white;border-radius:10px;text-decoration:none" class="ml-2 ">Client review</a><br><br><br>
+                                                                                        <a href="/workspace/project/wsTeamReview/<%= prjData.pTeam %>/<%= prjData._id %>/<%= prjData.pName %>/<%= usrData.fname %> <%= usrData.lname %>/projectmanager" style="padding: 11px 71px 11px 71px;background-color: blue;font-weight: bold;font-size:1.2em;color:white;border-radius:10px;text-decoration:none;" class="ml-2">WsTeam feedback</a>
+                                                                                <% } %>
+
+                                                                        </div>
+                                                                <div class="col-1">
+
+                                                                </div>
+                                                        </div>
+
+                                                        <center> 
+                                                                        <i class="fas fa-list-ul " style="color: blue;margin-left: -150px;font-size: 25px;"></i>
+                                                                        <a href="/workspace/freelancer/todo/<%= usrData._id %>/<%= usrData.designation %>" class="pl-2" style="color:black;text-decoration: none;font-weight: bold;font-size: 1.4em;">To-Do list</a>    
+
+                                                        </center>
+
+                                                        <center>
+                                                                
+                                                                <% if( prjData.assignedPM == true && prjData.assignedWsTeam == false ){ %>
+                                                                        <i class="fas fa-comment fa-2x mt-5" style="color:blue;margin-left: -65px;"></i>
+                                                                        <a href="/workspace/chat/<%= pmcl._id %>/<%= usrData.fname %>" class="pl-2" style="color:black;text-decoration: none;font-weight: bold;font-size: 1.3em;">Chat with the client</a>
+                                                                <% } %>
+
+                                                        </center>
+
+                                                        <center>
+                                                                
+                                                                <% if( prjData.assignedPM == true && prjData.assignedWsTeam == true ){ %>
+                                                                        <i class="fas fa-comment  mt-5" style="color:blue;margin-left: -65px;font-size: 25px;"></i>
+                                                                        <a href="/workspace/chat/<%= pmcl._id %>/<%= usrData.fname %>" class="pl-2" style="color:black;text-decoration: none;font-weight: bold;font-size: 1.3em;">Chat with the client</a>
+                                                                <% } %>
+
+                                                        </center>
+
+                                                        <center>
+                                                                <% if( prjData.assignedPM == true && prjData.assignedWsTeam == true ){ %>
+                                                                        <i class="fas fa-comments  mt-5" style="color:blue;font-size: 25px;"></i>
+                                                                        <a href="/workspace/chat/<%= pid %>/<%= usrData.fname %>" class="pl-2" style="color:black;text-decoration: none;font-weight: bold;font-size: 1.3em;">Chat with the Project team</a>    
+                                                                <% } %>
+
+
+                                                        </center>
+
+                      
+                                                </div>
+                                </div>
+                             
+                        </div>
+                        
+                </div>
+        </div>
+</div>
+
+<!-- FOOTER -->
+
+<% include ../partials/footerAcc %>
